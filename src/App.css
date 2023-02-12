@@ -1,0 +1,28 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+@layer components {
+    .hex {
+        height: 60px;
+        width: 60px;
+        /* clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); */
+        clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
+
+    }
+    .fieldBox {
+        width: 80%;
+        height: 50px;
+        clip-path: polygon(25% 0%, 75% 0%, 100% 0%, 100% 100%, 75% 100%, 25% 100%, 0% 100%, 0% 0%);
+        /* clip-path: none; */
+        border-radius: 10px;
+    }
+    .mdCard {
+        height: 160px;
+        width: 160px;
+        /* background-color: rgb(50, 50, 129); */
+        border-radius: 10px;
+    }
+}

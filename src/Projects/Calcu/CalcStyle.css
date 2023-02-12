@@ -1,0 +1,232 @@
+/* large screens */
+@media screen and ( min-width: 1001px ) {
+    /* main container */
+    .calc_Container {
+        margin: auto;
+        height: 35rem;
+        width: 28rem;
+        display: flex;
+        flex-direction: column;
+        border-radius: 16px;
+        border: 1px solid rgba(228, 228, 228, 0.31);
+        box-shadow: -10px 5px 20px 0 rgba(49, 49, 49, 0.301);
+        user-select: none;
+    }
+    /* outpout container */
+    .displayContainer {
+        margin: auto;
+        /* box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1); */
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        flex: 2;
+        /* box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1); */
+
+    }
+    /* output fields */
+    .outPut {
+        text-align: right;
+        color: black;
+        background: rgba(46, 45, 45, 0.1);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+        padding-right: 2%;
+        padding-left: 2%;
+	    text-align: right;
+        background: rgba(46, 45, 45, 0.1);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+    
+    }
+    /* top field */
+    .calOutputField {
+        border: none;
+        font-size: 1.5rem;
+        font-weight: bolder;
+        border-radius: 16px 16px 0 0;
+        flex: 1;
+    }
+    /* bottom field */
+    .displayField {
+        border: none;
+        font-weight: bold;
+        flex: 0.8;
+    }
+    /* table container */
+    .butt_Container {
+        flex: 6;
+        width: 100%;
+
+    }
+    .button_Box:hover {
+        -webkit-transition: 0.2s;
+        transition: 0.1s;
+        background: rgba(255, 255, 255, 0.247);
+        border-radius: 16px;
+    
+    }
+    /* table styling */
+    .butt_Table {
+        width: 100%;
+        height: 100%;
+        background: rgba(46, 45, 45, 0.1);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(2.5px);
+        -webkit-backdrop-filter: blur(2.5px);
+
+    }
+
+    .button_Box {
+        border: 2px solid rgba(0, 0, 0, 0.02);
+        width: 25%;
+    }
+
+}
+
+/* tablet */
+@media only screen and ( min-width: 550px ) and ( max-width: 1000px ) {
+    /* main container */
+    .calc_Container {
+        margin-top: 2%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 80vmax;
+        width: 90%;
+        border-radius: 8px;
+        box-shadow: 0 0 8px white;
+        color: white;
+    }
+    /* outpout container */
+    .displayContainer {
+        display: flex;
+        flex-direction: column;
+        flex: 2;
+        background-color: rgba(46, 45, 45, 0.1);
+        border-radius: 8px;
+        width: 100%;
+    }
+    /* input styling */
+    .outPut {
+        padding-right: 4%;
+        /* padding-left: 2%; */
+        /* width: 100%; */
+        text-align: right;
+        background: rgba(46, 45, 45, 0.1);
+        border: none;
+        outline: none;
+        box-shadow: 0 0 5px rgba(201, 201, 201, 0.1);
+
+    }
+    /* top input field */
+    .calOutputField {
+        font-size: 3.5vmax;
+        color: white;
+        flex: 1;
+    }
+    /* bottom display field */
+    .displayField{
+        font-size: 2.5vmax;
+        color: white;
+        flex: 0.8;
+    }
+    /* table container */
+    .butt_Container {
+        flex: 6;
+        width: 100%;
+        border-radius: 0 0 8px 8px;
+
+    }
+    /* table styling */
+    .butt_Table {
+        width: 100%;
+        height: 100%;
+        background: rgba(46, 45, 45, 0.1);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(2.5px);
+        -webkit-backdrop-filter: blur(2.5px);
+        /* border: 5px solid blue; */
+        /* border-radius: 0 0 8px 20px; */
+
+    }
+
+    .button_Box {
+        border: 2px solid rgba(0, 0, 0, 0.02);
+        width: 25%;
+    }
+}
+
+/* cellphone screens */
+@media only screen and ( max-width: 550px ) {
+    /* main container */
+    .calc_Container {
+        margin-top: 2%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 80vmax;
+        width: 90%;
+        border-radius: 8px;
+        box-shadow: 0 0 8px white;
+        color: white;
+    }
+    /* outpout container */
+    .displayContainer {
+        display: flex;
+        flex-direction: column;
+        flex: 2;
+        background-color: rgba(46, 45, 45, 0.1);
+        border-radius: 8px;
+    }
+    /* input styling */
+    .outPut {
+        padding-right: 2%;
+        /* padding-left: 2%; */
+        text-align: right;
+        background: rgba(46, 45, 45, 0.1);
+        border: none;
+        outline: none;
+        box-shadow: 0 0 5px rgba(201, 201, 201, 0.1);
+
+    }
+    /* top input field */
+    .calOutputField {
+        font-size: 3.5vmax;
+        color: white;
+        flex: 1;
+    }
+    /* bottom display field */
+    .displayField{
+        font-size: 2.5vmax;
+        color: white;
+        flex: 0.8;
+    }
+    /* table container */
+    .butt_Container {
+        flex: 6;
+        width: 100%;
+        border-radius: 0 0 8px 8px;
+
+    }
+    /* table styling */
+    .butt_Table {
+        width: 100%;
+        height: 100%;
+        background: rgba(46, 45, 45, 0.1);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(2.5px);
+        -webkit-backdrop-filter: blur(2.5px);
+        /* border: 5px solid blue; */
+        /* border-radius: 0 0 8px 20px; */
+
+    }
+
+    .button_Box {
+        border: 2px solid rgba(0, 0, 0, 0.02);
+        width: 25%;
+    }
+}
