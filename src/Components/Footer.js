@@ -47,8 +47,8 @@ export default function Footer() {
       </div>
       <div className="w-full h-full flex justify-center items-center">
         <a
-          href=".\src\Resume\MichaelBaron.pdf"
-          className="linkHover"
+          href="https://docs.google.com/document/d/e/2PACX-1vT6qCn8Xpk-13DsbY01a39T5qPRZbEfJx8i9ZYWJFem4Dsa87543X2G0_qC_x6liY6DRofkavcaRNwF/pub"
+          rel="noreferrer"
           download="MichaelBaron.pdf"
         >
           <TbArrowDown className='stroke-blueGrey-500 dark:stroke-blueGrey-100 stroke-2' size={28} />

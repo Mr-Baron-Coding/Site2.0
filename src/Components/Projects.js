@@ -14,8 +14,8 @@ export default function Projects() {
   const [screens, setScreens] = useState([
     // { screen: <Su />, name: 'Suduko', show: false, visit: 'Github', style: 'h-SudHieght w-SudWidth' },
     // { screen: 'Here', name: 'Suduko', show: false, visit: 'Github', style: 'h-SudHieght w-SudWidth' },
-    { screen: <XO />, name: 'XO', show: false, visit: 'Github', style: 'h-XOHeight w-XOWidth' },
-    { screen: <Calc />, name: 'Calculator', show: false, visit: 'Github', style: 'h-calcHeight w-calcWidth' },
+    { screen: <XO />, name: 'XO', show: false, visit: 'https://github.com/Mr-Baron-Coding/XO', style: 'h-XOHeight w-XOWidth' },
+    { screen: <Calc />, name: 'Calculator', show: false, visit: 'https://github.com/Mr-Baron-Coding/Calculator', style: 'h-calcHeight w-calcWidth' },
   ]);
   const [window, setWindow] = useState(false);
 
@@ -37,7 +37,7 @@ export default function Projects() {
 
   return (
     <>
-    <div id={`${!window&&'projects'}`} className={`p-3 md:p-0 row-start-6 md:row-start-4 col-start-2 w-full h-full grid grid-rows-[20%,_80%] rounded-lg md:grid-rows-none md:grid-cols-[25%,_20%,_30%,_25%] justify-items-center items-center animate-projectAnimation md:animate-none`}>
+    <div id={`${!window&&'projects'}`} className={`p-3 md:p-0 row-start-6 md:row-start-4 col-start-2 w-full h-full grid grid-rows-[20%,_80%] rounded-lg md:grid-rows-none md:grid-cols-[25%,_20%,_30%,_25%] justify-items-center items-center shadow-xl md:shadow-none md:dark:animate-projectAnimation md:animate-none`}>
       <div className='md:col-start-2 flex w-full h-full text-left items-center border-b lg:text-xl xl:text-2xl'>some of my Projects:</div>
       <div className='md:col-start-3 xl:col-start-3 md:row-start-1 border-b md:border-b grid grid-cols-2 grid-rows-2 w-full h-full md:flex md:justify-center md:items-center md:gap-0 md:relative'>
         { screens.map((e,i) => {
@@ -56,9 +56,11 @@ export default function Projects() {
             >
               <div className={`transition-all md:text-lg ${e.show&& 'flex items-center justify-center md:text-2xl'}`} onClick={() => handleClick(i)}>{e.name}</div>
               {e.show&&
+              <a href={`${e.visit}`} rel="noreferrer" target="_blank">
                 <div className='-rotate-6 flex items-center justify-center group'>
                   <TbBrandGithub className='group-hover:fill-blueGrey-300 group-hover:stroke-2 group-hover:stroke-blueGrey-500' size={ 28 } />
-                </div>}
+                </div>
+                </a>}      
             </div>
           )
         })}
@@ -69,8 +71,8 @@ export default function Projects() {
         { screens.map((e,i) => {
           return (
             e.show ? 
-            <div key={i+3} className={`h-full max-w-md w-full flex justify-center md:h-proHeight md:w-proWidth animate-projectAnimation rounded-xl`}>
-              {i===0 ? <Link to='/future' onClick={ () => handleClick(i) }>{e.screen}</Link> : e.screen}
+            <div key={i+3} className={`h-full max-w-md w-full flex justify-center md:h-proHeight md:w-proWidth shadow-xl dark:animate-projectAnimation rounded-xl`}>
+              {i===3 ? <Link to='/future' onClick={ () => handleClick(i) }>{e.screen}</Link> : e.screen}
             </div> 
             : null
           )
