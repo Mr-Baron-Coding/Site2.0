@@ -6,7 +6,9 @@ module.exports = {
     "./src/Components/*.{html,js}",
     "./src/Components/Homescreen Comp/*.{html,js}",
     "./src/Components/TechShape/*.{html,js}",
-    "./src/Projects/**.{html,js}"
+    "./src/Projects/**.{html,js}",
+    "./src/Pages/**.{html,js}",
+    "./src/FamTree/**.{html,js}",
   ],
   darkMode: 'class',
   theme: {
@@ -139,6 +141,10 @@ module.exports = {
 
           },
         },
+        colorChange: {
+          '0%, 100%': { color: '#778DA9' },
+          '50': { color: '#0D1B2A' },
+        },
         bounce: {
           '0%' :{
             transform: 'none', 
@@ -167,7 +173,8 @@ module.exports = {
         slideElement: 'slide 1s linear',
         rotate4: 'rotate4 1s linear forwards',
         projectAnimation: 'projectDisplayAnimation 1s ease-in-out forwards',
-        blinker: 'blink 1s linear forwards infinite'
+        blinker: 'blink 1s linear forwards infinite',
+        colorChange: 'colorChange 2s linear'
       },
       boxShadow: {
           'boxShadow': '20px 20px 60px #0f1520, -20px -20px 60px #273756'
