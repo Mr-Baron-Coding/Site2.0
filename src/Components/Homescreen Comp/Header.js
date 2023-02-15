@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState, useLayoutEffect, useEffect, createElement} from "react";
+import './Style.css';
+import anime from 'animejs/lib/anime.es.js';
 
 export default function Header() {
+    
+
   return (
     <div 
         id='header' 
-        className="
+        className="relative bg-clip-border
             grid-cols-6
             grid-rows-3
             col-span-4 

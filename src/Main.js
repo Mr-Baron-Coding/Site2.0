@@ -54,8 +54,10 @@ function Main() {
         const mike = window.history.replaceState("", document.title, window.location.pathname + window.location.search); 
         console.log(mike);
     };
+
   return (
     <div 
+      id='main'
       className={` 
         min-h-screen snap-y snap-mandatory
         bg-blueGrey-100 text-blueGrey-500

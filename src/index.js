@@ -16,6 +16,7 @@ import stopwatchSlice from './Projects/Sudoko/features/stopwatchSlice';
 import styleSlice from './Features/styleSlice';
 import SubSites from './SubSites';
 import Main from './Main';
+import dataSlice from './FamTree/Features/dataSlice';
 
 const store = configureStore({
   reducer: {
@@ -24,7 +25,8 @@ const store = configureStore({
     messages: messageSlice,
     score: scoreboardSlice,
     stopwatch: stopwatchSlice,
-    style: styleSlice
+    style: styleSlice,
+    famData: dataSlice
   }
 });
 

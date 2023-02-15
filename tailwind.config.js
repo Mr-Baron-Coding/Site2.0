@@ -12,6 +12,9 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
+    backgroundImage: {
+      'points': {radialGradient: 'rgba(255,255,255, 0.1) 9%', transparent: '9%' }
+    },
     screens: {
       'xs': '400px',
       'sm': '640px',
@@ -22,7 +25,8 @@ module.exports = {
     fontFamily: {
       'header': 'Shadows Into Light, cursive',
       'body': 'Averia Gruesa Libre, cursive',
-      'extra': 'Nunito Sans, sans-serif'
+      'extra': 'Nunito Sans, sans-serif',
+      'fam': 'Noto Sans, sans-serif'
     },
     colors: {
       'black': '#000000',
@@ -44,6 +48,13 @@ module.exports = {
         500: '#415A77',
         700: '#1B263B',
         900: '#0D1B2A',
+      },
+      'fam': {
+        'background': '#E0FBFC',
+        'color': '#293241',
+        'elements': '#98C1D9',
+        'sub': '#3D5A80',
+        'buttonsColor': '#EE6C4D'
       }
     },
     extend: {
