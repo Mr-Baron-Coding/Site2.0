@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { closeForm } from './FamTree/Features/dataSlice';
@@ -8,6 +8,12 @@ import Preview from './FamTree/Preview';
 export default function SubSites() {
   const dispatch = useDispatch();
   const isFormOpen = useSelector((state) => state.famData.inputFormOpen);
+  const scrollbar = window.scrollbars;
+
+  useEffect(() => {
+    const bar = window.document.scrollingElement;
+    console.log(bar);
+  },[scrollbar])
   return (
     <div className='grid grid-cols-[5vw,_1fr,_5vw] md:grid-cols-[5vw,_1fr] grid-rows-[10vh,_1fr,_10vh] min-h-screen min-w-[360px] md:min-w-[800px] bg-fam-background text-fam-color font-fam'>
         <div className='col-start-1 col-span-3 border-b-2 row-start-1 grid grid-cols-4'><div className='col-start-1 col-span-2 flex items-center'>Let's refresh</div><div className='col-start-4 flex justify-center items-end md:invisible' onClick={ () => dispatch(closeForm()) }>+</div></div>
