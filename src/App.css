@@ -18,6 +18,14 @@
         clip-path: polygon(25% 0%, 75% 0%, 100% 0%, 100% 100%, 75% 100%, 25% 100%, 0% 100%, 0% 0%);
         /* clip-path: none; */
         border-radius: 10px;
+        position: relative;
+    }
+    .fieldBox::before {
+        content: ''; 
+        position: absolute;
+        top: 0;
+        left: 0;
+        
     }
     .mdCard {
         height: 160px;

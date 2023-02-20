@@ -13,6 +13,8 @@ import Contact from './Components/Contact';
 import Footer from './Components/Footer';
 import ProgressBar from './Components/ProgressBar';
 
+import anime from 'animejs';
+
 function Main() {
   const dispatch = useDispatch();
   const isOpen = useSelector((state) => state.mobile.menuOpend);

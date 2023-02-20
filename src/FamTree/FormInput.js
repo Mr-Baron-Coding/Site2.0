@@ -4,10 +4,10 @@ import { addData, closeForm } from './Features/dataSlice';
 
 export default function FormInput() {
     const dispatch = useDispatch();
-    const isAdd = useSelector((state) => state.famData.userData);
+    const isAdd = useSelector((state) => state.famData.userDataLevelTwo);
     const [nameOne, setNameOne] = useState('');
     const [nameTwo, setNameTwo] = useState('');
-    const [level, setLevel] = useState('grandparents');
+    const [level, setLevel] = useState('level_one');
     const [message, setMessage] = useState(false);
     const [messageTwo, setMessageTwo] = useState(false);
 
@@ -15,7 +15,7 @@ export default function FormInput() {
         if ( nameOne.length < 2 ) { return setMessage(true)};
         if ( nameTwo.length < 2 ) { return setMessageTwo(true)};
         console.log(nameOne, nameTwo, level);
-        dispatch(addData({nameOne, nameTwo, level}));
+        dispatch(addData({nameOne, nameTwo, level, id:isAdd.length}));
         clearForm();
     };
 
@@ -27,7 +27,7 @@ export default function FormInput() {
   return (
     <div className='flex flex-col items-center justify-between bg-fam-elements/50 shadow-xl rounded-xl h-full w-full xl:h-5/6 xl:w-3/4 xl:m-auto border'>
         <div className='flex justify-center items-center relative h-1/2 w-full'>
-            <div className='flex justify-center items-center relative h-full w-full'>Let's create a family tree</div>
+            <div className='flex justify-center items-center relative h-full w-full'>Let's create a family tree!</div>
             <div className='absolute top-2 right-3' onClick={ () => dispatch(closeForm()) }>X</div>
         </div>
         <div className='flex justify-center items-center relative h-full w-full'>
@@ -40,10 +40,10 @@ export default function FormInput() {
         </div>
         <div className='flex justify-center items-center relative h-full w-full'>
             <select value={level} onChange={(e) => setLevel(e.target.value)} className='bg-fam-sub/50 border-fam-sub h-1/2 w-11/12 rounded-lg px-3 outline-none focus:outline-1 focus:outline-fam-sub focus:shadow-xl' >
-                <option className='even:bg-fam-sub' value='grandparents'>Grandparents</option>
-                <option className='even:bg-fam-sub' value='parents'>Parents</option>
-                <option className='even:bg-fam-sub/30' value='siblings'>Siblings</option>
-                <option className='even:bg-fam-sub/30' value='children'>Children</option>
+                <option className='even:bg-fam-sub' value='level_one'>I</option>
+                <option className='even:bg-fam-sub' value='level_two'>II</option>
+                {/* <option className='even:bg-fam-sub/30' value='level_three'>III</option>
+                <option className='even:bg-fam-sub/30' value='level_four'>IV</option> */}
             </select>
         </div>
         

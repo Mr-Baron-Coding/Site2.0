@@ -136,6 +136,10 @@ module.exports = {
         '100px': '100px'
       },
       keyframes: {
+        magicSpan: {
+          'from': { backgroundPosition: '0% center' },
+          'to': { backgroundPosition: '-200% center'}
+        },
         slide: {
           '0%': {transform: 'translateY(100%)'},
           '100%':{ transform: 'translateY(0%)'}
@@ -181,6 +185,7 @@ module.exports = {
         },
       },
       animation: {
+        magicText: 'magicSpan 3s linear infinite',
         slideElement: 'slide 1s linear',
         rotate4: 'rotate4 1s linear forwards',
         projectAnimation: 'projectDisplayAnimation 1s ease-in-out forwards',

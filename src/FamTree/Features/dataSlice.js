@@ -5,13 +5,19 @@ export const dataSlice = createSlice({
     initialState: {
         inputFormOpen: true,
         userData: [],
+        userDataLevelTwo: []
     },
     reducers: {
         closeForm: (state, action) => {
             state.inputFormOpen = !state.inputFormOpen;
         },
         addData: (state, action) => {
-            state.userData = [...state.userData, action.payload];
+            if (action.payload.level === 'level_two') {
+                state.userDataLevelTwo = [...state.userDataLevelTwo, action.payload];
+            } 
+            else {
+                state.userData = [...state.userData, action.payload];
+            }
         }
         
     },

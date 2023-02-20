@@ -17,6 +17,7 @@ import styleSlice from './Features/styleSlice';
 import SubSites from './SubSites';
 import Main from './Main';
 import dataSlice from './FamTree/Features/dataSlice';
+import ThreePlayGround from './ThreePlayGround';
 
 const store = configureStore({
   reducer: {
@@ -37,6 +38,7 @@ const router = createBrowserRouter(
     <Route path='/' element={ <App /> } errorElement={<div>Hello</div>}>
       <Route path='/' element={ <Main /> } />
       <Route path='future' element={ <SubSites /> } />
+      <Route path='three' element={ <ThreePlayGround /> } />
     </Route>
   )
 );
