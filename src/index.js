@@ -18,6 +18,7 @@ import SubSites from './SubSites';
 import Main from './Main';
 import dataSlice from './FamTree/Features/dataSlice';
 import ThreePlayGround from './ThreePlayGround';
+import Error from './Pages/Error';
 
 const store = configureStore({
   reducer: {
@@ -35,7 +36,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={ <App /> } errorElement={<div>Hello</div>}>
+    <Route path='/' element={ <App /> } errorElement={ <Error />}>
       <Route path='/' element={ <Main /> } />
       <Route path='future' element={ <SubSites /> } />
       <Route path='three' element={ <ThreePlayGround /> } />
