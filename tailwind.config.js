@@ -9,6 +9,7 @@ module.exports = {
     "./src/Projects/**.{html,js}",
     "./src/Pages/**.{html,js}",
     "./src/FamTree/**.{html,js}",
+    "./src/Three/**.{html,js}",
   ],
   darkMode: 'class',
   theme: {
@@ -153,6 +154,15 @@ module.exports = {
           },
           '100%': {
             boxShadow: '20px 10px 40px #0f1520, -20px -20px 60px #273756',
+
+          },
+        },
+        projectDisplayAnimationLight: {
+          '0%': {
+            boxShadow: 'none',
+          },
+          '100%': {
+            boxShadow: '20px 10px 40px #0f1520, -20px -20px 60px #778DA9',
 
           },
         },

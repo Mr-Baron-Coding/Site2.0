@@ -20,12 +20,26 @@
         border-radius: 10px;
         position: relative;
     }
-    .fieldBox::before {
-        content: ''; 
+    .fieldBox::after {
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
-        
+        clip-path: polygon(25% 0%, 75% 0%, 100% 0%, 100% 100%, 75% 100%, 25% 100%, 0% 100%, 0% 0%);
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, #415A77, #778DA9);
+        transition: all 1s ease 300ms;
+        z-index: -1;
+        transform: translateX(-100%);
+        border-radius: 10px;
+
+    }
+    .fieldBox:hover::after {
+        clip-path: polygon(25% 0%, 75% 0%, 100% 0%, 100% 100%, 75% 100%, 25% 100%, 0% 100%, 0% 0%);
+        transform: translateX(0%);
+        border-radius: 10px;
+
     }
     .mdCard {
         height: 160px;

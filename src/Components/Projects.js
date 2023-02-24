@@ -8,6 +8,7 @@ import Calc from '../Projects/Calcu/CalcScreen';
 import XO from '../Projects/XO/GameTable';
 
 import { TbBrandGithub } from "react-icons/tb";
+import ProjectElement3D from '../Three/ProjectElement3D';
 
 export default function Projects() {
   const dispatch = useDispatch();
@@ -37,8 +38,9 @@ export default function Projects() {
 
   return (
     <>
-    <div id={`${!window&&'projects'}`} className={`p-3 md:p-0 row-start-6 md:row-start-4 col-start-2 w-full h-full grid grid-rows-[20%,_80%] rounded-lg md:grid-rows-none md:grid-cols-[25%,_20%,_30%,_25%] justify-items-center items-center shadow-xl md:shadow-none md:dark:animate-projectAnimation md:animate-none`}>
+    <div id={`${!window&&'projects'}`} className={`p-3 md:p-0 row-start-6 md:row-start-4 col-start-2 w-full h-full grid grid-rows-[20%,_80%] rounded-lg md:grid-rows-none md:grid-cols-[25%,_20%,_30%,_25%] justify-items-center items-center shadow-xl md:animate-projectDisplayAnimationLight md:dark:animate-projectAnimation md:animate-none`}>
       <div className='md:col-start-2 flex w-full h-full text-left items-center border-b md:border-none lg:text-xl xl:text-2xl'>some of my Projects:</div>
+      {/* <ProjectElement3D /> */}
       <div className='md:col-start-3 xl:col-start-3 md:row-start-1 border-b md:border-none grid grid-cols-2 grid-rows-2 w-full h-full md:flex md:justify-center md:items-center md:gap-0 md:relative'>
         { screens.map((e,i) => {
           return (
@@ -60,7 +62,7 @@ export default function Projects() {
                 <div className='-rotate-6 flex items-center justify-center group'>
                   <TbBrandGithub className='group-hover:fill-blueGrey-300 group-hover:stroke-2 group-hover:stroke-blueGrey-500' size={ 28 } />
                 </div>
-                </a>}      
+              </a>}      
             </div>
           )
         })}
