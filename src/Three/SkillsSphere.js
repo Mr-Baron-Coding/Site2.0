@@ -26,7 +26,7 @@ function Word({ children, ...props }) {
   return <Text ref={ref} onPointerOver={over} onPointerOut={out} onClick={() => console.log('clicked')} {...props} {...fontProps} children={children} />
 }
 
-function Cloud({ count = 4, radius = 20 }) {
+function Cloud({ count = {}, radius = {} }) {
   // Create a count x count random words with spherical distribution
   const words = useMemo(() => {
     const temp = []
@@ -35,6 +35,7 @@ function Cloud({ count = 4, radius = 20 }) {
     const thetaSpan = (Math.PI * 2) / count
     for (let i = 1; i < count + 1; i++)
       for (let j = 0; j < count; j++) temp.push([new THREE.Vector3().setFromSpherical(spherical.set(radius, phiSpan * i, thetaSpan * j)), randomWord()])
+      console.log(temp);
     return temp
   }, [count, radius])
   return words.map(([pos, word], index) => <Word key={index} position={pos} children={word} />)
@@ -42,9 +43,9 @@ function Cloud({ count = 4, radius = 20 }) {
 
 export default function App() {
   return (
-    <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 35], fov: 80 }} className='h-full'>
-      <fog attach="fog" args={['#202025', 0, 120]} />
-      <Cloud count={8} radius={20} />
+    <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 40], fov: 80 }} className='h-full'>
+      <fog attach="fog" args={['#88888c', 10, 40]} />
+      <Cloud count={4} radius={15} />
       <TrackballControls />
     </Canvas>
   )
