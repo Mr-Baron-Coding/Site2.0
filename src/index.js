@@ -20,6 +20,7 @@ import dataSlice from './FamTree/Features/dataSlice';
 import Error from './Pages/Error';
 import ThreeTesting from './Pages/ThreeTesting';
 import SkillsSphere from './Three/SkillsSphere';
+import Mike from './Projects/Mike/Landing';
 
 const store = configureStore({
   reducer: {
@@ -42,6 +43,8 @@ const router = createBrowserRouter(
       <Route path='future' element={ <SubSites /> } />
       <Route path='three' element={ <ThreeTesting /> } />
       <Route path='sphere' element={ <SkillsSphere /> } />
+      {/* <Route path='landingpage' element={ <Mike /> } /> */}
+      <Route path='landing' element={ <Mike /> } />
     </Route>
   )
 );

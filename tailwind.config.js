@@ -13,9 +13,9 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
-    backgroundImage: {
-      'points': {radialGradient: 'rgba(255,255,255, 0.1) 9%', transparent: '9%' }
-    },
+    // backgroundImage: {
+    //   'points': {radialGradient: 'rgba(255,255,255, 0.1) 9%', transparent: '9%' }
+    // },
     screens: {
       'xs': '400px',
       'sm': '640px',
@@ -56,9 +56,20 @@ module.exports = {
         'elements': '#98C1D9',
         'sub': '#3D5A80',
         'buttonsColor': '#EE6C4D'
-      }
+      },
+      'mike': {
+        'bgLight': '#ffffff',
+        'backgroundDark': '#111111',
+        'fontLight': '#ffffff',
+        'fontDark': '#111111'
+      },
     },
     extend: {
+      backgroundImage: {
+        'mike': "url('../public/images/articaleOne.jpg')",
+        'articaleTwo': "url('../public/images/articaleTwo.jpg')",
+        'articaleThree': "url('../public/images/articaleThree.jpg')",
+      },
       content: {
         some: 'Hello',
       },
