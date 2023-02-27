@@ -5,6 +5,9 @@ import { changeTheme, changeLang } from '../../Features/styleSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { FaLinkedin } from 'react-icons/fa';
+import { SiLinkedin, SiYoutube } from 'react-icons/si';
+import { FaYoutube } from 'react-icons/fa';
 import Heb from '../../Img/Flag_of_Israel.webp';
 import Eng from '../../Img/Flag_of_the_United_States.webp';
 
@@ -58,7 +61,10 @@ export default function Main() {
     <div className='h-full bg-mike-bgLight dark:bg-mike-backgroundDark grid grid-rows-[15%,_80%,_5%] text-mike-fontDark dark:text-mike-fontLight'>
       <div className='row-start-1 border-b-2 border-mike-backgroundDark/10 dark:border-mike-bgLight/10 grid grid-cols-[50%,_25%,_25%]'>
         <div className='col-start-1 text-4xl border-r-2 border-mike-backgroundDark/10 dark:border-mike-bgLight/10 px-8 py-10'>Michael Radvogin - Real Estate & Investing</div>
-        <div className='col-start-2 border-r-2 border-mike-backgroundDark/10 dark:border-mike-bgLight/10'>Nav</div>
+        <div className='col-start-2 border-r-2 border-mike-backgroundDark/10 dark:border-mike-bgLight/10 flex justify-evenly items-center'>
+          <FaLinkedin className='transition-all hover:rounded-xl hover:text-mike-fontLight/40 cursor-pointer' size={ 28 } />
+          <SiYoutube className='transition-all hover:rounded-xl hover:text-mike-fontLight/40 cursor-pointer' size={ 28 } />
+        </div>
         <div className='flex justify-around items-center'>
           <span className='hover:cursor-pointer' onClick={ isDark ? () => themeChange(false) : () => themeChange(true) }>{ !isDark ? <LightMode /> : <DarkMode /> }</span>
           <span className='grid items-center w-6 h-6 overflow-hidden rounded-full'>{ isEnglish ? <img src={ Heb } alt='heb' onClick={ () => dispatch(changeLang()) }/> : <img src={ Eng } alt='heb' onClick={ () => dispatch(changeLang()) } /> }</span>
@@ -81,7 +87,7 @@ export default function Main() {
         </div>
 
         <div className='h-full w-full grid grid-cols-[75%,_25%] grid-rows-[75%,_25%] absolute left-0 top-0 data-[status=moving-right]:transition-none data-[status=moving-right]:translate-x-full data-[status=moving-left]:transition-none data-[status=moving-left]:-translate-x-full data-[status=active]:transition data-[status=active]:duration-500 data-[status=before]:-translate-x-full data-[status=after]:translate-x-full' data-index='1' data-status='before'>
-          <div className='row-start-1 bg-articaleTwo bg-no-repeat bg-clip-padding bg-center text-center border-r-2 border-mike-backgroundDark/10 dark:border-mike-bgLight/10 left-0 top-0'></div>
+          <div className='row-start-1 bg-articaleTwo bg-no-repeat bg-clip-padding bg-center text-center border-r-2 border-b-2 border-mike-backgroundDark/10 dark:border-mike-bgLight/10 left-0 top-0'></div>
           <div className='col-start-2 flex justify-center items-end'>Let me walk you </div>
           <div className='col-start-1 row-start-2 font-bold text-6xl p-5 overflow-clip border-r-2 border-mike-backgroundDark/10 dark:border-mike-bgLight/10'>All things Investing</div>
           <div className='row-start-2 col-start-2 flex justify-around items-center'>
@@ -94,6 +100,16 @@ export default function Main() {
           <div className='row-start-1 bg-articaleThree bg-no-repeat bg-clip-padding bg-center text-center border-r-2 border-mike-backgroundDark/10 dark:border-mike-bgLight/10 left-0 top-0'></div>
           <div className='col-start-2 flex justify-center items-end'>Learn some Crypto </div>
           <div className='col-start-1 row-start-2 font-bold text-6xl p-5 overflow-clip border-r-2 border-mike-backgroundDark/10 dark:border-mike-bgLight/10'>All things Crypto</div>
+          <div className='row-start-2 col-start-2 flex justify-around items-center'>
+            <div><FontAwesomeIcon icon={ faChevronLeft } size='3x' onClick={ () => goLeft() } /></div>
+            <div><FontAwesomeIcon icon={ faChevronRight } size='3x' onClick={ () => goRight() } /></div>
+          </div>
+        </div>
+
+        <div className='h-full w-full grid grid-cols-[75%,_25%] grid-rows-[75%,_25%] absolute left-0 top-0 data-[status=moving-right]:transition-none data-[status=moving-right]:translate-x-full data-[status=moving-left]:transition-none data-[status=moving-left]:-translate-x-full data-[status=active]:transition data-[status=active]:duration-500 data-[status=before]:-translate-x-full data-[status=after]:translate-x-full' data-index='3' data-status='before'>
+          <div className='row-start-1 bg-no-repeat bg-clip-padding bg-center text-center border-r-2 border-mike-backgroundDark/10 dark:border-mike-bgLight/10 left-0 top-0'></div>
+          <div className='col-start-2 flex justify-center items-end'>Video </div>
+          <div className='col-start-1 row-start-2 font-bold text-6xl p-5 overflow-clip border-r-2 border-mike-backgroundDark/10 dark:border-mike-bgLight/10'>My Videos</div>
           <div className='row-start-2 col-start-2 flex justify-around items-center'>
             <div><FontAwesomeIcon icon={ faChevronLeft } size='3x' onClick={ () => goLeft() } /></div>
             <div><FontAwesomeIcon icon={ faChevronRight } size='3x' onClick={ () => goRight() } /></div>
