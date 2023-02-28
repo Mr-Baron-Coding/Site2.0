@@ -66,7 +66,7 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'mike': "url('../public/images/articaleOne.jpg')",
+        'articaleOne': "url('../public/images/articaleOne.jpg')",
         'articaleTwo': "url('../public/images/articaleTwo.jpg')",
         'articaleThree': "url('../public/images/articaleThree.jpg')",
       },
