@@ -7,6 +7,7 @@ module.exports = {
     "./src/Components/Homescreen Comp/*.{html,js}",
     "./src/Components/TechShape/*.{html,js}",
     "./src/Projects/**.{html,js}",
+    "./src/Projects/Mike/**.{html,js,jpg}",
     "./src/Pages/**.{html,js}",
     "./src/FamTree/**.{html,js}",
     "./src/Three/**.{html,js}",
@@ -66,7 +67,7 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'articaleOne': "url('../public/images/articaleOne.jpg')",
+        'articaleOne': "url('../src/Projects/Mike/images/articaleOne.jpg')",
         'articaleTwo': "url('../public/images/articaleTwo.jpg')",
         'articaleThree': "url('../public/images/articaleThree.jpg')",
       },
