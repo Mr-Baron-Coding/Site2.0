@@ -10,11 +10,13 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { FaContactCard } from '@fortawesome/free-solid-svg-icons';
 import Heb from '../../Img/Flag_of_Israel.webp';
 import Eng from '../../Img/Flag_of_the_United_States.webp';
+import ContactForm from './ContactForm';
 
 export default function Main() {
   const dispatch = useDispatch();
   const isDark = useSelector((state) => state.style.isDark);
   const isEnglish = useSelector((state) => state.style.isEnglish);
+  const [isContactOpen, setContactOpen] = useState(false);
   
   const themeChange = (x) => {
     dispatch(changeTheme(x))
@@ -30,6 +32,10 @@ export default function Main() {
       document.documentElement.lang = 'en';
     }
   };
+  
+  const close = () => {
+    setContactOpen(false);
+  };
 
   useEffect(() => {
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -40,14 +46,15 @@ export default function Main() {
   },[]);
 
   return (
-    <div className='h-full bg-mike-bgLight dark:bg-mike-backgroundDark grid grid-rows-[15%,_80%,_5%] text-mike-fontDark dark:text-mike-fontLight select-none'>
+    <div className='h-full relative bg-mike-bgLight dark:bg-mike-backgroundDark grid grid-rows-[15%,_80%,_5%] text-mike-fontDark dark:text-mike-fontLight select-none overflow-hidden'>
+      <ContactForm isContactOpen={ isContactOpen } close={() => close() } />
       <div className='row-start-1 border-b-2 border-mike-backgroundDark/10 dark:border-mike-bgLight/10 grid grid-cols-[50%,_25%,_25%]'>
         <div className={`col-start-1 text-4xl ${ isEnglish ? 'border-r-2' : 'border-l-2'} border-mike-backgroundDark/10 dark:border-mike-bgLight/10 px-8 py-10 subpixel-antialiased`}>
           { isEnglish ? 'Michael Radvogin - Real Estate & Investing' : 'מיכאל רדבוגין - נדל"ן ושוק ההון' }
         </div>
         <div className={`col-start-2 ${ isEnglish ? 'border-r-2' : 'border-l-2'} border-mike-backgroundDark/10 dark:border-mike-bgLight/10 flex justify-evenly items-center`}>
           <a href='https://www.linkedin.com/in/michaelradvogin/' target='_blank'><FaLinkedin className='transition-all hover:rounded-xl hover:text-mike-fontDark/40 dark:hover:text-mike-fontLight/40 cursor-pointer' size={ 28 } /></a>
-          <HiMail className='transition-all hover:rounded-xl hover:text-mike-fontDark/40 dark:hover:text-mike-fontLight/40 cursor-pointer' size={ 28 } />
+          <HiMail onClick={ () => setContactOpen(!isContactOpen) } className='transition-all hover:rounded-xl hover:text-mike-fontDark/40 dark:hover:text-mike-fontLight/40 cursor-pointer' size={ 28 } />
           <a aria-label="Chat on WhatsApp" target='_blank' href="https://wa.me/972544443598"><FaWhatsapp className='hover:text-mike-fontDark/40 dark:hover:text-mike-fontLight/40 cursor-pointer' size={ 28 } /></a>
         </div>
         <div className='flex justify-around items-center'>

@@ -11,14 +11,14 @@ export default function Screens() {
 
     const dataEng = [
         { name: 'about', main: 'Helllo', header: 'A little about me', description: 'Some info about myself', bg: 'bg-articaleOne' },
-        { name: 'video', main: 'Helllo', header: 'Latest video', description: 'Watch', bg: 'bg-articaleOne' },
+        { name: 'video', main: 'Helllo', header: 'Latest video', description: 'Watch', bg: 'bg-none' },
         { name: 'realestate', main: 'Helllo', header: 'All things real estate', description: 'With many years of experience investing in real estate in the US and Isarel...', bg: 'bg-articaleOne' },
         { name: 'market', main: 'Helllo', header: 'All things Investing', description: 'I will teach you everything you need to know about about the market', bg: 'bg-articaleTwo' },
         { name: 'crypto', main: 'Helllo', header: 'All things Crypto', description: 'Crypto market made easy/explained', bg: 'bg-articaleThree' },
     ];
       const dataHeb = [
-        { name: 'about', main: 'Helllo', header: 'A little about me', description: 'מיכאל רדבוגין - האיש מאחורי האגדה', bg: 'bg-articaleOne' },
-        { name: 'video', main: 'Helllo', header: 'Latest video', description: 'בואו ללמוד משהו חדש', bg: 'bg-articaleOne' },
+        { name: 'about', main: 'Helllo', header: 'מיכאל רדבוגין', description: 'קצת רקע עליי', bg: 'bg-articaleOne' },
+        { name: 'video', main: 'Helllo', header: 'Latest video', description: 'בואו ללמוד משהו חדש', bg: 'bg-none' },
         { name: 'נדל"ן', main: 'Helllo', header: 'נדל"ן', description: ' כולם מדברים נדל"ן אבל אתם חוששים? אל תדאגו אסייע לכם לאורך כל הדרך - מאיתור הזדמנויות ועד רכישת הנכס', bg: 'bg-articaleOne' },
         { name: 'שוק ההון', main: 'Helllo', header: 'שוק ההון', description: 'בואו ללמוד כל מה שצריך בכדי להתחיל להשקיע בשוק ההון', bg: 'bg-articaleTwo' },
         { name: 'קריפטו', main: 'Helllo', header: 'שוק הקריפטו', description: 'בוא ללמוד כל מה שצריך על שוק הקריפטו', bg: 'bg-articaleThree' },
@@ -71,7 +71,7 @@ export default function Screens() {
                     <div key={i} className='h-full w-full grid grid-cols-[75%,_25%] grid-rows-[75%,_25%] absolute left-0 top-0 data-[status=moving-right]:transition-none data-[status=moving-right]:translate-x-full data-[status=moving-left]:transition-none data-[status=moving-left]:-translate-x-full data-[status=active]:transition-all data-[status=active]:duration-500 data-[status=before]:-translate-x-full data-[status=after]:translate-x-full' data-index={i} data-status={i === 0 ? 'active' : 'before'}>
                     <div className={`row-start-1 col-span-2 ${e.bg} grid place-items-center bg-blend-soft-light bg-cover bg-clip-border bg-no-repeat bg-center text-center border-r-2 border-mike-backgroundDark/10 dark:border-mike-bgLight/10 left-0 top-0 dark:text-mike-fontLight text-mike-fontDark`}>
                         <div className='h-full w-full bg-mike-bgLight/50 dark:bg-mike-backgroundDark/50 text-xl font-bold font-body flex justify-center items-center'>
-                            <div className='w-[80%] h-[90%] border p-5'>{ i=== 1 ? <iframe className='h-full aspect-video' src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=1" ></iframe> : loremIpsum() }</div>
+                            { i=== 1 ? <iframe className='h-full aspect-video' src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=1"></iframe> : <div className='w-[80%] h-[90%] border p-5'>{ loremIpsum() }<br/> { loremIpsum() }</div> }
                         </div>
                     </div>
                     {/* <div className='col-start-2 flex justify-center items-end p-5'>
@@ -93,8 +93,12 @@ export default function Screens() {
             return (
                 <div key={i} className='h-full w-full grid grid-cols-[75%,_25%] grid-rows-[75%,_25%] absolute left-0 top-0 data-[status=moving-right]:transition-none data-[status=moving-right]:translate-x-full data-[status=moving-left]:transition-none data-[status=moving-left]:-translate-x-full data-[status=active]:transition-all data-[status=active]:duration-500 data-[status=before]:-translate-x-full data-[status=after]:translate-x-full' data-index={i} data-status={i === 0 ? 'active' : 'before'}>
                   <div className={`row-start-1 col-span-2 ${e.bg} grid place-items-center bg-blend-soft-light bg-cover bg-no-repeat bg-center text-center border-l-2 border-mike-backgroundDark/10 dark:border-mike-bgLight/10 left-0 top-0 dark:text-mike-fontLight text-mike-fontDark`}>
-                    <div className='h-full w-full bg-mike-bgLight/50 dark:bg-mike-backgroundDark/50 text-xl font-bold font-body flex justify-center items-center'>
-                        <div className='w-[80%] h-[90%] border p-5'>{ loremIpsum() }<br/> { loremIpsum() }</div>
+                    <div className='h-full w-full bg-mike-bgLight/50 dark:bg-mike-backgroundDark/50 text-3xl font-bold font-body flex justify-center items-center'>
+                        { i=== 1 ? <iframe className='h-full aspect-video' src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=1"></iframe> 
+                        : <div className='w-[80%] h-[90%] border p-5'>
+                            <div className='h-10 border'>{ e.description }</div>
+                            <div>{ e.main }</div>
+                        </div> }
                     </div>
                   </div>
                   {/* <div className='col-start-2 flex justify-center items-end p-5'>

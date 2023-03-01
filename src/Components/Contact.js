@@ -19,6 +19,7 @@ export default function Contact() {
                     </div>
                     <input type="hidden" name="_next" value="https://www.mikegbaron.com/" />
                     <input type="hidden" name="_subject" value='New submission!' />
+                    <input type="hidden" name="_captcha" value="false" style="display:none"></input>
                     <div className='flex flex-col gap-2'><label>Message</label>
                         <textarea required type='text' name='message' placeholder='Say Something' className='font-black text-black dark:text-blueGrey-100 bg-blueGrey-500/70 h-[250px] outline-none border-none rounded-lg p-3 focus:outline-2 focus:outline-blueGrey-300 resize-none focus:bg-blueGrey-700/70'></textarea>
                     </div>
