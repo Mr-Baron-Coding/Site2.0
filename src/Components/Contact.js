@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
 
@@ -25,7 +25,7 @@ export default function Contact() {
             setMail('');
             setMessage('');
             setThanks(false)
-        },2000)
+        }, 3000)
     };
 
   return (

@@ -4,12 +4,10 @@ import { DarkMode, LightMode } from '@mui/icons-material';
 import { changeTheme, changeLang } from '../../Features/styleSlice';
 import Screens from './Screens';
 import { FaLinkedin } from 'react-icons/fa';
-import { SiYoutube } from 'react-icons/si';
 import { HiMail } from 'react-icons/hi';
 import { FaWhatsapp } from 'react-icons/fa';
-import { FaContactCard } from '@fortawesome/free-solid-svg-icons';
-import Heb from '../../Img/Flag_of_Israel.webp';
-import Eng from '../../Img/Flag_of_the_United_States.webp';
+import Heb from './images/israel-flag-icon.png'
+import Eng from './images/united-states-flag-icon.png';
 import ContactForm from './ContactForm';
 
 export default function Main() {
