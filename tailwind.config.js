@@ -68,8 +68,9 @@ module.exports = {
     extend: {
       backgroundImage: {
         'articaleOne': "url('../src/Projects/Mike/images/articaleOne.jpg')",
-        'articaleTwo': "url('../public/images/articaleTwo.jpg')",
-        'articaleThree': "url('../public/images/articaleThree.jpg')",
+        'articaleTwo': "url('../src/Projects/Mike/images/articaleTwo.jpg')",
+        'articaleThree': "url('../src/Projects/Mike/images/articaleThree.jpg')",
+        'articaleFour': "url('../src/Projects/Mike/images/articaleFour.jpg')",
       },
       content: {
         some: 'Hello',
