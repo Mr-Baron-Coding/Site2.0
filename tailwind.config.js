@@ -28,7 +28,8 @@ module.exports = {
       'header': 'Shadows Into Light, cursive',
       'body': 'Averia Gruesa Libre, cursive',
       'extra': 'Nunito Sans, sans-serif',
-      'fam': 'Noto Sans, sans-serif'
+      'fam': 'Noto Sans, sans-serif',
+      'Radbo': 'font-family Righteous, cursive'
     },
     colors: {
       'black': '#000000',
