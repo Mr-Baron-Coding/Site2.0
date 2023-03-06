@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import Heb from './images/israel-flag-icon.png'
 import Eng from './images/united-states-flag-icon.png';
 import { DarkMode, LightMode } from '@mui/icons-material';
+import { FaWhatsapp } from 'react-icons/fa';
 
 export default function MobileMenu({mobileMenu, change, theme, contact}) {
     const isEnglish = useSelector((state) => state.style.isEnglish);
@@ -19,8 +20,8 @@ export default function MobileMenu({mobileMenu, change, theme, contact}) {
     <div className={`md:hidden w-full h-full z-20 absolute transition-all ease-linear duration-500 bg-mike-bgLight/95 dark:bg-mike-backgroundDark/90 ${mobileMenu ? 'translate-y-0' : '-translate-y-[101%]'} `}>
           <div className={`w-full h-full flex flex-col justify-center font-bold text-xl z-20 gap-6 absolute transition-all ease-linear duration-500 ${settings ? 'translate-x-[101%]' : 'translate-x-0'}`}>
             <div className='text-center' onClick={ contact }>{isEnglish? 'Leave a message' : 'השאירו פרטים'}</div>
-            <div className='text-center'>{isEnglish? 'WhatsApp Me' : 'דברו איתי ישירות'}</div>
-            <div className='text-center'>{isEnglish? 'Follow me for latest news' : ' עקבו אחריי ברשתות החברתיות'}</div>
+            <a aria-label="Chat on WhatsApp" target='_blank' href="https://wa.me/972544443598"><div className='flex justify-center gap-4'>{isEnglish? 'WhatsApp Me' : 'דברו איתי ישירות'}<FaWhatsapp /></div></a>
+            <a href='https://www.facebook.com/michael.radvogin' target='_blank' ><div className='text-center'>{isEnglish? 'Follow me for latest news' : ' עקבו אחריי ברשתות החברתיות'}</div></a>
             <div className='text-center absolute bottom-0 m-auto' onClick={ () => setSettings(true) }>{ isEnglish ? 'Settings' : 'הגדרות'}</div>
         </div>
         <div className={`flex flex-col w-full h-full font-bold z-10 pt-10 absolute bg-mike-bgLight/95 dark:bg-mike-backgroundDark/90 transition-all ease-linear duration-500 ${settings ? 'translate-x-0' : '-translate-x-[101%]'}`}>

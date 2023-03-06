@@ -43,6 +43,10 @@ export default function Main() {
   };
 
   useEffect(() => {
+    mobileMenu && setContactOpen(false);
+  },[mobileMenu])
+
+  useEffect(() => {
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark');
     } else {
@@ -71,11 +75,11 @@ export default function Main() {
             { isEnglish ? <img src={ Heb } alt='heb' onClick={ () => langChange() }/> : <img src={ Eng } alt='heb' onClick={ () => langChange() } /> }
           </span>
         </div>
-        <div className={`md:hidden h-8 w-8 top-3 absolute z-30 ${ isEnglish ? 'right-3' : 'left-3'} flex flex-col justify-center items-center gap-1.5`} onClick={() => setMenu(!mobileMenu) }>
-          <div className={`transition-all duration-700 ease-in-out h-[2px] w-full rounded-full dark:bg-mike-bgLight bg-mike-backgroundDark ${mobileMenu ? 'origin-top-left -rotate-45 translate-y-5 -translate-x-2' : 'w-full'}`}></div>
-          <div className={`transition-all duration-700 ease-in-out h-[2px] w-full rounded-full dark:bg-mike-bgLight bg-mike-backgroundDark ${mobileMenu ? 'origin-top-right rotate-45 translate-y-3 translate-x-1' : 'w-full'}`}></div>
-          <div className={`transition-all duration-700 ease-in-out h-[2px] w-full rounded-full dark:bg-mike-bgLight bg-mike-backgroundDark ${mobileMenu ? 'origin-bottom-left rotate-90 -translate-y-1' : 'w-full'}`}></div>
-          <div className={`transition-all duration-700 ease-in-out h-[2px] w-full rounded-full dark:bg-mike-bgLight bg-mike-backgroundDark ${mobileMenu ? 'origin-bottom-right rotate-90 -translate-x-1 translate-y-5' : 'w-full'}`}></div>
+        <div className={`md:hidden h-8 w-8 top-3 absolute z-30 ${ isEnglish ? 'right-3' : 'left-3'} flex flex-col justify-center items-center gap-1.5`} onClick={() => setMenu(!mobileMenu)}>
+          <div className={`transition-all duration-700 ease-in-out h-[2px] rounded-full dark:bg-mike-bgLight bg-mike-backgroundDark ${mobileMenu ? 'origin-top-left -rotate-45 translate-y-4 -translate-x-1 w-4' : 'w-full'}`}></div>
+          <div className={`transition-all duration-700 ease-in-out h-[2px] rounded-full dark:bg-mike-bgLight bg-mike-backgroundDark ${mobileMenu ? 'origin-top-right rotate-45 translate-y-2 translate-x-1 w-4' : 'w-full'}`}></div>
+          <div className={`transition-all duration-700 ease-in-out h-[2px] rounded-full dark:bg-mike-bgLight bg-mike-backgroundDark ${mobileMenu ? 'origin-bottom-left rotate-90 -translate-y-1 w-4' : 'w-full'}`}></div>
+          <div className={`transition-all duration-700 ease-in-out h-[2px] rounded-full dark:bg-mike-bgLight bg-mike-backgroundDark ${mobileMenu ? 'origin-bottom-right rotate-90 translate-y-1 -translate-x-0.5  w-4' : 'w-full'}`}></div>
         </div>
       </div>
 

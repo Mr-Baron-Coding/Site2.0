@@ -11,6 +11,7 @@ export default function Screens() {
 
     const dataEng = [
         { name: 'about', main: 'Helllo', header: 'A little about me', description: 'Some info about myself', bg: 'bg-articaleOne' },
+        { name: 'social', main: 'Helllo', header: 'Latest in social', description: '', bg: 'bg-articaleOne' },
         { name: 'video', main: 'Helllo', header: 'Latest video', description: 'Watch', bg: 'bg-none' },
         { name: 'realestate', main: 'Helllo', header: 'All things real estate', description: 'With many years of experience investing in real estate in the US and Isarel...', bg: 'bg-articaleOne' },
         { name: 'market', main: 'Helllo', header: 'All things Investing', description: 'I will teach you everything you need to know about about the market', bg: 'bg-articaleTwo' },
@@ -68,10 +69,11 @@ export default function Screens() {
         { isEnglish ? 
             dataEng.map((e,i) => {
                 return (
-                    <div key={i} className='h-full w-full grid grid-rows-[60%,_20%,_20%] md:grid-cols-[75%,_25%] md:grid-rows-[75%,_25%] absolute left-0 top-0 data-[status=moving-right]:transition-none data-[status=moving-right]:translate-x-full data-[status=moving-left]:transition-none data-[status=moving-left]:-translate-x-full data-[status=active]:transition-all data-[status=active]:duration-500 data-[status=before]:-translate-x-[110%] data-[status=after]:translate-x-[110%]' data-index={i} data-status={i === 0 ? 'active' : 'before'}>
+                    <div key={i} className='h-full w-full grid grid-rows-[70%,_10%,_20%] md:grid-cols-[75%,_25%] md:grid-rows-[75%,_25%] absolute left-0 top-0 data-[status=moving-right]:transition-none data-[status=moving-right]:translate-x-full data-[status=moving-left]:transition-none data-[status=moving-left]:-translate-x-full data-[status=active]:transition-all data-[status=active]:duration-500 data-[status=before]:-translate-x-[110%] data-[status=after]:translate-x-[110%]' data-index={i} data-status={i === 0 ? 'active' : 'before'}>
                         <div className={`row-start-1 md:row-start-1 md:col-span-2 ${e.bg} grid place-items-center bg-blend-soft-light bg-cover bg-clip-border bg-no-repeat text-center border-x-2 border-mike-backgroundDark/10 dark:border-mike-bgLight/10 left-0 top-0 dark:text-mike-fontLight text-mike-fontDark`}>
                             <div className='h-full w-full bg-mike-bgLight/50 dark:bg-mike-backgroundDark/50 text-xl font-bold font-body overflow-y-auto md:overflow-none scroll-smooth'>
-                                { i=== 1 ? <iframe className='h-full aspect-video' src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=1"></iframe> : <div className='px-2'>{ loremIpsum() }<br/> { loremIpsum() }</div> }
+                                { i=== 2 ? <iframe className='w-full md:w-1/2 aspect-video' src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=1"></iframe> : <div className='px-2'>{ loremIpsum() }<br/> { loremIpsum() }</div> }
+                                { i === 1 ? <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fachramenko%2Fposts%2Fpfbid062A5J1CASZvuF2Tem9BzsqUrzMPur7oHt67qpCuMqN7EajCPRb7xUKXSPAB8zzrMl&show_text=true&width=500" width="500" height="545" style={{border:'none', overflow:'hidden'}} allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe> : <div className='px-2'>{ loremIpsum() }<br/> { loremIpsum() }</div>}
                             </div>
                         </div>
                         <div className='row-start-2 md:col-start-1 md:row-start-2 font-bold text-3xl lg:text-6xl p-5 overflow-clip border-x-2 border-t-2 border-mike-backgroundDark/10 dark:border-mike-bgLight/10 uppercase'>{ e.header }</div>
