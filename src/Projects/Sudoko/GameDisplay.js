@@ -28,7 +28,7 @@ export default function GameDisplay() {
         {/* <div className='overflowStyle'><TableLineStyling /></div> */}
       <div className='grid grid-cols-3 text-center items-center'>
         <SubmitButton />
-        {/* <Stopwatch /> */}
+        <Stopwatch />
       </div>
       
       { showGame && isMobile ? <div className='flex w-full justify-center items-center'><Keyboard /></div> : null }

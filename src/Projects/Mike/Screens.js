@@ -18,13 +18,49 @@ export default function Screens() {
         { name: 'crypto', main: 'Helllo', header: 'All things Crypto', description: 'Crypto market made easy/explained', bg: 'bg-articaleThree' },
     ];
       const dataHeb = [
-        { name: 'about', main: 'Helllo', header: 'מיכאל רדבוגין', description: 'קצת רקע עליי', bg: 'bg-articaleFour bg-bottom' },
-        { name: 'video', main: 'Helllo', header: 'Latest video', description: 'בואו ללמוד משהו חדש', bg: 'bg-none' },
-        { name: 'נדל"ן', main: 'Helllo', header: 'נדל"ן', description: ' כולם מדברים נדל"ן אבל אתם חוששים? אל תדאגו אסייע לכם לאורך כל הדרך - מאיתור הזדמנויות ועד רכישת הנכס', bg: 'bg-articaleOne' },
-        { name: 'שוק ההון', main: 'Helllo', header: 'שוק ההון', description: 'בואו ללמוד כל מה שצריך בכדי להתחיל להשקיע בשוק ההון', bg: 'bg-articaleTwo' },
-        { name: 'קריפטו', main: 'Helllo', header: 'שוק הקריפטו', description: 'בוא ללמוד כל מה שצריך על שוק הקריפטו', bg: 'bg-articaleThree' },
+        { 
+            name: 'about', 
+            main: 'Helllo', 
+            header: 'מיכאל רדבוגין', 
+            description: [' קצת רקע עליי', 'אל תדאגו אסייע לכם לאורך כל הדרך - מאיתור הזדמנויות ועד רכישת הנכס' ],
+            bg: 'bg-articaleFour bg-bottom' 
+        },
+        { 
+            name: 'video', 
+            main: 'Helllo', 
+            header: 'Latest video', 
+            description: [' בואו ללמוד משהו חדש', 'אל תדאגו אסייע לכם לאורך כל הדרך - מאיתור הזדמנויות ועד רכישת הנכס'] ,
+            bg: 'bg-none' 
+        },
+        { 
+            name: 'נדל"ן', 
+            main: 'Helllo', 
+            header: 'נדל"ן', 
+            description: 
+                [
+                    ' כולם מדברים נדל"ן אבל אתם חוששים? ',  
+                    'אל תדאגו אסייע לכם לאורך כל הדרך - מאיתור הזדמנויות ועד רכישת הנכס' , 
+                    'אז על מה אנחנו מדברים?', 
+                    'נדל"ן להשקעה', 
+                    'נדל"ן למגורים'
+                ], 
+            bg: 'bg-articaleOne' 
+        },
+        { 
+            name: 'שוק ההון', 
+            main: 'Helllo', 
+            header: 'שוק ההון', 
+            description: [ ' בואו ללמוד כל מה שצריך בכדי להתחיל להשקיע בשוק ההון ',  'אל תדאגו אסייע לכם לאורך כל הדרך - מאיתור הזדמנויות ועד רכישת הנכס' ], 
+            bg: 'bg-articaleTwo' 
+        },
+        { 
+            name: 'קריפטו', 
+            main: 'Helllo', 
+            header: 'שוק הקריפטו', 
+            description: [ ' בוא ללמוד כל מה שצריך על שוק הקריפטו', 'אל תדאגו אסייע לכם לאורך כל הדרך - מאיתור הזדמנויות ועד רכישת הנכס' ], 
+            bg: 'bg-articaleThree' 
+        },
     ];
-    // let activeIndex = 0;
     const [activeIndex, setActive] = useState(0);
 
     useEffect(() => {
@@ -46,7 +82,6 @@ export default function Screens() {
     
         setTimeout(() => {
           next.dataset.status = 'active';
-        //   activeIndex = nextIndex;
         setActive(nextIndex);
         });
       };
@@ -59,7 +94,6 @@ export default function Screens() {
         next.dataset.status = 'moving-right';
         setTimeout(() => {
           next.dataset.status = 'active';
-        //   activeIndex = nextIndex;
           setActive(nextIndex);
         });
       };
@@ -71,10 +105,10 @@ export default function Screens() {
                 return (
                     <div key={i} className='h-full w-full grid grid-rows-[70%,_10%,_20%] md:grid-cols-[75%,_25%] md:grid-rows-[75%,_25%] absolute left-0 top-0 data-[status=moving-right]:transition-none data-[status=moving-right]:translate-x-full data-[status=moving-left]:transition-none data-[status=moving-left]:-translate-x-full transition-all duration-1000 ease-in-out data-[status=before]:translate-x-[110%] data-[status=after]:-translate-x-[110%]' data-index={i} data-status={i === 0 ? 'active' : 'before'}>
                         <div className={`row-start-1 md:row-start-1 md:col-span-2 ${e.bg} grid place-items-center bg-blend-soft-light bg-cover bg-clip-border bg-no-repeat text-center border-x-2 border-mike-backgroundDark/10 dark:border-mike-bgLight/10 left-0 top-0 dark:text-mike-fontLight text-mike-fontDark`}>
-                            <div className='h-full w-full bg-mike-bgLight/50 dark:bg-mike-backgroundDark/50 text-xl font-bold font-body overflow-y-auto md:overflow-none scroll-smooth'>
+                            <div className='h-full w-full bg-mike-bgLight/70 dark:bg-mike-backgroundDark/50 text-xl font-bold font-body flex justify-center items-center overflow-y-auto md:overflow-none scroll-smooth'>
                                 { i === 2 ? <iframe className='w-full md:w-1/2 aspect-video' src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=1"></iframe>
                                 : i === 1 ? <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fachramenko%2Fposts%2Fpfbid062A5J1CASZvuF2Tem9BzsqUrzMPur7oHt67qpCuMqN7EajCPRb7xUKXSPAB8zzrMl&show_text=true&width=500" width="500" height="545" style={{border:'none', overflow:'hidden'}} allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                                : <div className='px-2'>{ loremIpsum() }<br/> { loremIpsum() }</div>}
+                                : <div className='w-[80%] h-[90%] border p-5'>{ loremIpsum() }<br/> { loremIpsum() }</div>}
                             </div>
                         </div>
                         <div className='row-start-2 md:col-start-1 md:row-start-2 font-bold text-3xl lg:text-6xl p-5 overflow-clip border-x-2 border-t-2 border-mike-backgroundDark/10 dark:border-mike-bgLight/10 uppercase'>{ e.header }</div>
@@ -93,10 +127,25 @@ export default function Screens() {
             return (
                 <div key={i} className='h-full w-full grid grid-rows-[70%,_10%,_20%] md:grid-rows-[75%,_25%] md:grid-cols-[75%,_25%] absolute left-0 top-0 data-[status=moving-right]:transition-none data-[status=moving-right]:translate-x-full data-[status=moving-left]:transition-none data-[status=moving-left]:-translate-x-full transition-all duration-1000 ease-in-out data-[status=before]:translate-x-[110%] data-[status=after]:-translate-x-[110%]' data-index={i} data-status={i === 0 ? 'active' : 'before'}>
                   <div className={`row-start-1 md:col-span-2 ${e.bg} grid place-items-center bg-blend-soft-light bg-cover bg-no-repeat bg-center text-center border-l-2 border-mike-backgroundDark/10 dark:border-mike-bgLight/10 left-0 top-0 dark:text-mike-fontLight text-mike-fontDark`}>
-                    <div className='h-full w-full bg-mike-bgLight/50 dark:bg-mike-backgroundDark/50 text-3xl font-bold font-body flex justify-center items-center'>
+                    <div className='h-full w-full bg-mike-bgLight/70 dark:bg-mike-backgroundDark/50 text-3xl font-bold font-body flex justify-center items-center'>
                         { i=== 1 ? <iframe className='w-full md:w-1/2 aspect-video' src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=1"></iframe> 
-                        : <div className='w-[80%] h-[90%] border p-5'>
-                            <div className='h-10 border'>{ e.description }</div>
+                        : <div className='w-[80%] h-[90%] border p-5 flex flex-col'>
+                            <div>{ e.description[0] }</div>
+                            <div>{ e.description[1] }</div>
+                            {e.description[2] && <div className='grid grid-cols-2 grid-rows-[20%,_80%] h-2/3'>
+                                <div className='row-start-1 col-start-1 col-span-2'>{ e.description[2] }</div>
+                                <div className='col-span-1 row-start-2 col-start-1 h-1/4 w-1/3 transition-all duration-700 delay-100 ease-in-out group border-b md:hover:border-b md:hover:bg-grey/50 md:hover:w-full overflow-hidden'>
+                                    <div>{ e.description[3] }</div>
+                                    <div className='text-right transition-all delay-500 duration-500 group-hover:translate-x-0 translate-x-full translate-y-1/2'>יצירת הכנסה פסיבית</div>
+                                    <div className='text-right transition-all delay-[700ms] duration-500 group-hover:translate-x-0 translate-x-full translate-y-1/2'>החזקת נכס</div>
+                                    <div className='text-right transition-all delay-[900ms] duration-500 group-hover:translate-x-0 translate-x-full translate-y-1/2'>השקעה לטווח ארוך</div>
+                                </div>           
+                                <div className='relative row-start-2 col-start-2 h-1/4 w-1/3 transition-all duration-700 delay-100 ease-in-out md:hover:border-b md:hover:bg-grey/50 md:hover:w-full overflow-hidden'>
+                                    { e.description[4] }
+                                    <input type='checkbox' className='group absolut bottom-0 appearance-none h-8 w-8 border checked:h-5 checked:w-5 checked:border' />
+                                    <div className='group-checked:block hidden'>Hello</div>
+                                </div>
+                            </div>}
                         </div> }
                     </div>
                   </div>

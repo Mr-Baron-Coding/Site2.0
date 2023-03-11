@@ -20,7 +20,7 @@ export default function MobileMenu({mobileMenu, change, theme, contact}) {
     <div className={`md:hidden w-full h-full z-20 absolute transition-all ease-linear duration-500 bg-mike-bgLight/95 dark:bg-mike-backgroundDark/90 ${mobileMenu ? 'translate-y-0' : '-translate-y-[101%]'} `}>
           <div className={`w-full h-full flex flex-col justify-center font-bold text-xl z-20 gap-6 absolute transition-all ease-linear duration-500 ${settings ? 'translate-x-[101%]' : 'translate-x-0'}`}>
             <div className='text-center' onClick={ contact }>{isEnglish? 'Leave a message' : 'השאירו פרטים'}</div>
-            <a aria-label="Chat on WhatsApp" target='_blank' href="https://wa.me/972544443598"><div className='flex justify-center gap-4'>{isEnglish? 'WhatsApp Me' : 'דברו איתי ישירות'}<FaWhatsapp /></div></a>
+            <a aria-label="Chat on WhatsApp" target='_blank' href="https://wa.me/972529258063"><div className='flex justify-center gap-4'>{isEnglish? 'WhatsApp Me' : 'דברו איתי ישירות'}<FaWhatsapp /></div></a>
             <a href='https://www.facebook.com/michael.radvogin' target='_blank' ><div className='text-center'>{isEnglish? 'Follow me for latest news' : ' עקבו אחריי ברשתות החברתיות'}</div></a>
             <div className='text-center absolute bottom-0 m-auto' onClick={ () => setSettings(true) }>{ isEnglish ? 'Settings' : 'הגדרות'}</div>
         </div>
@@ -31,7 +31,7 @@ export default function MobileMenu({mobileMenu, change, theme, contact}) {
                         { !isDark ? <LightMode /> : <DarkMode /> }
                     </span>
                 </div>
-                <div className='flex justify-center' onClick={ () => setSettings(false) }>{`${isEnglish ? 'Back' : 'חזרה'}`}</div>
+                <div className='h-1/6 px-2 flex justify-center items-center' onClick={ () => setSettings(false) }>{`${isEnglish ? 'Back' : 'חזרה'}`}</div>
             </div>
     </div>
   )

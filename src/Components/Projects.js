@@ -4,7 +4,7 @@ import { openClose } from '../Features/mobileSlice';
 import { Link } from 'react-router-dom';
 
 import Calc from '../Projects/Calcu/CalcScreen';
-// import Su from '../Projects/Sudoko/GameDisplay';
+import Su from '../Projects/Sudoko/GameDisplay';
 import XO from '../Projects/XO/GameTable';
 
 import { TbBrandGithub } from "react-icons/tb";
@@ -13,7 +13,7 @@ import ProjectElement3D from '../Three/ProjectElement3D';
 export default function Projects() {
   const dispatch = useDispatch();
   const [screens, setScreens] = useState([
-    // { screen: <Su />, name: 'Suduko', show: false, visit: 'Github', style: 'h-SudHieght w-SudWidth' },
+    { screen: <Su />, name: 'Suduko', show: false, visit: 'Github', style: 'h-SudHieght w-SudWidth' },
     // { screen: 'Here', name: 'Suduko', show: false, visit: 'Github', style: 'h-SudHieght w-SudWidth' },
     { screen: <XO />, name: 'XO', show: false, visit: 'https://github.com/Mr-Baron-Coding/XO', style: 'h-XOHeight w-XOWidth' },
     { screen: <Calc />, name: 'Calculator', show: false, visit: 'https://github.com/Mr-Baron-Coding/Calculator', style: 'h-calcHeight w-calcWidth' },
