@@ -13,11 +13,11 @@ import {
 export default function Footer() {
     const isOpen = useSelector((state) => state.mobile.menuOpend);
   return (
-    <div className={`bg-blueGrey-900/50 border-t col-start-1 col-span-3 ${ isOpen ? 'row-start-[11] md:row-start-7' : 'row-start-[10] md:row-start-6'} grid grid-cols-4 grid-rows-[70%,_30%] h-full w-full items-center justify-center`}>
+    <div className={`bg-blueGrey-500/20 border-t col-start-1 col-span-3 ${ isOpen ? 'row-start-[11] md:row-start-7' : 'row-start-[10] md:row-start-6'} grid grid-cols-4 grid-rows-[70%,_30%] h-full w-full items-center justify-center`}>
       <div className='col-start-1 col-span-4 lg:col-start-3 lg:col-span-2 grid grid-cols-4'>
       <div className="w-full h-full flex justify-center items-center">
         <a href="mailto:mikebaroncoding@gmail.com" className="linkHover">
-            <TbMail className="stroke-blueGrey-500 dark:stroke-blueGrey-100 stroke-2" size={28} />
+            <TbMail className="stroke-blueGrey-900 dark:stroke-blueGrey-100 stroke-2" size={28} />
             {/* <div>mikebaroncoding</div> */}
         </a>
       </div>
@@ -28,7 +28,7 @@ export default function Footer() {
           className="linkHover"
           target="_blank"
         >
-            <TbBrandLinkedin className='stroke-blueGrey-500 dark:stroke-blueGrey-100 stroke-2' size={28} />
+            <TbBrandLinkedin className='stroke-blueGrey-900 dark:stroke-blueGrey-100 stroke-2' size={28} />
             {/* <div>Mike Baron</div> */}
         </a>
       </div>
@@ -40,7 +40,7 @@ export default function Footer() {
           target="_blank"
         >
           <div className="innerContainer">
-            <TbBrandGithub className='stroke-blueGrey-500 dark:stroke-blueGrey-100 stroke-2' size={28} />
+            <TbBrandGithub className='stroke-blueGrey-900 dark:stroke-blueGrey-100 stroke-2' size={28} />
             {/* <div>Mike-Baron-Coding</div> */}
           </div>
         </a>
@@ -51,7 +51,7 @@ export default function Footer() {
           rel="noreferrer"
           download="MichaelBaron.pdf"
         >
-          <TbArrowDown className='stroke-blueGrey-500 dark:stroke-blueGrey-100 stroke-2' size={28} />
+          <TbArrowDown className='stroke-blueGrey-900 dark:stroke-blueGrey-100 stroke-2' size={28} />
           {/* <div className="innerContainer">Download Resume<div>
                 </div>
                 </div> */}

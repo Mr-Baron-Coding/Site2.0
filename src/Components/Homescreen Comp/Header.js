@@ -1,11 +1,8 @@
-import React, { useState, useLayoutEffect, useEffect, createElement} from "react";
+import React from "react";
 import './Style.css';
-import anime from 'animejs/lib/anime.es.js';
 import ThreePlayGround from "../../ThreePlayGround";
 
 export default function Header() {
-    const styles = { linearGradient: 'to right, rgb(123, 31, 162) rgb(103, 58, 183) rgb(244, 143, 177)'}
-
   return (
     <div 
         id='header' 
@@ -16,7 +13,7 @@ export default function Header() {
             mb-5 md:mb-0
             md:col-start-2 
             md:col-span-2 overflow-hidden 
-            md:grid">
+            md:grid grow">
                 <ThreePlayGround /> 
         <div className="text-4xl lg:text-4xl col-start-1 col-span-4 md:col-span-6 flex items-center justify-center md:justify-start md:items-end">
             Hi! I'm<span className="font-header ml-3 text inline-block relative">

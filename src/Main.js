@@ -13,7 +13,6 @@ import Contact from './Components/Contact';
 import Footer from './Components/Footer';
 import ProgressBar from './Components/ProgressBar';
 
-import anime from 'animejs';
 
 function Main() {
   const dispatch = useDispatch();
@@ -33,7 +32,7 @@ function Main() {
           window.removeEventListener('scroll', handleScroll);
         };
       }, []); 
-      
+
     useEffect(() => {
       dispatch(changeScreenSize(matches));
   
@@ -68,7 +67,7 @@ function Main() {
         ${isOpen ? 'grid-rows-baseRowGridMobileOpen md:grid-rows-baseRowGridOpen' : 'grid-rows-baseRowGridMobile md:grid-rows-baseRowGrid'}
         grid-cols-baseColGridMobile
         md:grid-cols-baseColGrid 
-        md:gap-y-8 min-w-[360px]
+        gap-y-4 md:gap-y-10 min-w-[360px]
         font-body select-none`}
     >
       <ProgressBar prog={ scrollTop } />

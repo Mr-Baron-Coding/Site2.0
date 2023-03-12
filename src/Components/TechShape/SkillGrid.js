@@ -24,7 +24,7 @@ export default function HaxagonGrid() {
     ];
     
   return (
-    <div className='md:col-start-2 col-span-2 group p-3 flex flex-col justify-around items-center h-full w-full bg-blueGrey-500/10 shadow-xl rounded-xl'>
+    <div className='md:col-start-1 md:col-span-4 lg:col-start-2 lg:col-span-2 group p-4 flex flex-col justify-around items-center h-full w-full bg-blueGrey-500/10 shadow-xl rounded-xl'>
         <div className='flex w-full h-full justify-evenly items-center group/line'>
             { skillz.map((e,i) => {
                     return (
