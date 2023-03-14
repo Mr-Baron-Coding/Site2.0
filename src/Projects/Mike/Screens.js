@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { loremIpsum } from 'react-lorem-ipsum';
+import asd from './Data/HebData';
 
 export default function Screens() {
     const isEnglish = useSelector((state) => state.style.isEnglish);
@@ -12,7 +13,7 @@ export default function Screens() {
     const dataEng = [
         { name: 'about', main: 'Helllo', header: 'A little about me', description: 'Some info about myself', bg: 'bg-articaleOne' },
         { name: 'social', main: 'Helllo', header: 'Latest in social', description: '', bg: 'bg-articaleOne' },
-        { name: 'video', main: 'Helllo', header: 'Latest video', description: 'Watch', bg: 'bg-none' },
+        // { name: 'video', main: 'Helllo', header: 'Latest video', description: 'Watch', bg: 'bg-none' },
         { name: 'realestate', main: 'Helllo', header: 'All things real estate', description: 'With many years of experience investing in real estate in the US and Isarel...', bg: 'bg-articaleOne' },
         { name: 'market', main: 'Helllo', header: 'All things Investing', description: 'I will teach you everything you need to know about about the market', bg: 'bg-articaleTwo' },
         { name: 'crypto', main: 'Helllo', header: 'All things Crypto', description: 'Crypto market made easy/explained', bg: 'bg-articaleThree' },
@@ -29,13 +30,13 @@ export default function Screens() {
             ],
             bg: 'bg-articaleFour bg-bottom' 
         },
-        { 
-            name: 'video', 
-            main: 'Helllo', 
-            header: 'Latest video', 
-            description: [' בואו ללמוד משהו חדש', 'אל תדאגו אסייע לכם לאורך כל הדרך - מאיתור הזדמנויות ועד רכישת הנכס'] ,
-            bg: 'bg-none' 
-        },
+        // { 
+        //     name: 'video', 
+        //     main: 'Helllo', 
+        //     header: 'Latest video', 
+        //     description: [' בואו ללמוד משהו חדש', 'אל תדאגו אסייע לכם לאורך כל הדרך - מאיתור הזדמנויות ועד רכישת הנכס'] ,
+        //     bg: 'bg-none' 
+        // },
         { 
             name: 'נדל"ן', 
             main: 'Helllo', 
@@ -50,20 +51,20 @@ export default function Screens() {
                 ], 
             bg: 'bg-articaleOne' 
         },
-        { 
-            name: 'שוק ההון', 
-            main: 'Helllo', 
-            header: 'שוק ההון', 
-            description: [ ' בואו ללמוד כל מה שצריך בכדי להתחיל להשקיע בשוק ההון ',  'אל תדאגו אסייע לכם לאורך כל הדרך - מאיתור הזדמנויות ועד רכישת הנכס' ], 
-            bg: 'bg-articaleTwo' 
-        },
-        { 
-            name: 'קריפטו', 
-            main: 'Helllo', 
-            header: 'שוק הקריפטו', 
-            description: [ ' בוא ללמוד כל מה שצריך על שוק הקריפטו', 'אל תדאגו אסייע לכם לאורך כל הדרך - מאיתור הזדמנויות ועד רכישת הנכס' ], 
-            bg: 'bg-articaleThree' 
-        },
+        // { 
+        //     name: 'שוק ההון', 
+        //     main: 'Helllo', 
+        //     header: 'שוק ההון', 
+        //     description: [ ' בואו ללמוד כל מה שצריך בכדי להתחיל להשקיע בשוק ההון ',  'אל תדאגו אסייע לכם לאורך כל הדרך - מאיתור הזדמנויות ועד רכישת הנכס' ], 
+        //     bg: 'bg-articaleTwo' 
+        // },
+        // { 
+        //     name: 'קריפטו', 
+        //     main: 'Helllo', 
+        //     header: 'שוק הקריפטו', 
+        //     description: [ ' בוא ללמוד כל מה שצריך על שוק הקריפטו', 'אל תדאגו אסייע לכם לאורך כל הדרך - מאיתור הזדמנויות ועד רכישת הנכס' ], 
+        //     bg: 'bg-articaleThree' 
+        // },
     ];
     const [activeIndex, setActive] = useState(0);
 
@@ -74,6 +75,8 @@ export default function Screens() {
               next = document.querySelector(`[data-index='${nextIndex}']`);
               current.dataset.status = 'active';
               next.dataset.status = 'before';
+              asd.forEach(e => { console.log(e);});
+              console.log(asd);
     },[isDark, isEnglish])
 
     const goRight = () => {
@@ -111,7 +114,7 @@ export default function Screens() {
                         <div className={`row-start-1 md:row-start-1 md:col-span-2 ${e.bg} grid place-items-center bg-blend-soft-light bg-cover bg-clip-border bg-no-repeat text-center border-x-2 border-mike-backgroundDark/10 dark:border-mike-bgLight/10 left-0 top-0 dark:text-mike-fontLight text-mike-fontDark`}>
                             <div className='h-full w-full bg-mike-bgLight/70 dark:bg-mike-backgroundDark/50 text-xl font-bold font-body flex justify-center items-center overflow-y-auto md:overflow-none scroll-smooth'>
                                 { i === 2 ? <iframe className='w-full md:w-1/2 aspect-video' src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=1"></iframe>
-                                : i === 1 ? <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fachramenko%2Fposts%2Fpfbid062A5J1CASZvuF2Tem9BzsqUrzMPur7oHt67qpCuMqN7EajCPRb7xUKXSPAB8zzrMl&show_text=true&width=500" width="500" height="545" style={{border:'none', overflow:'hidden'}} allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                // : i === 1 ? <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fachramenko%2Fposts%2Fpfbid062A5J1CASZvuF2Tem9BzsqUrzMPur7oHt67qpCuMqN7EajCPRb7xUKXSPAB8zzrMl&show_text=true&width=500" width="500" height="545" style={{border:'none', overflow:'hidden'}} allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                                 : <div className='w-[80%] h-[90%] border p-5'>{ loremIpsum() }<br/> { loremIpsum() }</div>}
                             </div>
                         </div>
@@ -127,12 +130,44 @@ export default function Screens() {
                     </div>
                 )
             })
-        :   dataHeb.map((e,i) => {
+        :   asd.map((e,i) => {
             return (
                 <div key={i} className='h-full w-full grid grid-rows-[70%,_10%,_20%] md:grid-rows-[75%,_25%] md:grid-cols-[75%,_25%] absolute left-0 top-0 data-[status=moving-right]:transition-none data-[status=moving-right]:translate-x-full data-[status=moving-left]:transition-none data-[status=moving-left]:-translate-x-full transition-all duration-1000 ease-in-out data-[status=before]:translate-x-[110%] data-[status=after]:-translate-x-[110%]' data-index={i} data-status={i === 0 ? 'active' : 'before'}>
                   <div className={`row-start-1 md:col-span-2 ${e.bg} grid place-items-center bg-blend-soft-light bg-cover bg-no-repeat bg-center text-center border-l-2 border-mike-backgroundDark/10 dark:border-mike-bgLight/10 left-0 top-0 dark:text-mike-fontLight text-mike-fontDark`}>
-                    <div className='h-full w-full bg-mike-bgLight/70 dark:bg-mike-backgroundDark/50 text-3xl font-bold font-body flex justify-center items-center'>
-                        { i=== 1 ? <iframe className='w-full md:w-1/2 aspect-video' src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=1"></iframe> 
+                    <div className='h-full w-full bg-mike-bgLight/70 dark:bg-mike-backgroundDark/50 text-xl md:text-3xl font-bold font-body flex justify-center items-center overflow-y-auto md:overflow-none scroll-smooth'>
+                        <div className='p-3 h-full w-full inline-block'>
+                            {e.description.map((de,poss) => {
+                                return (
+                                    <>
+                                        <div className='text-2xl underline underline-offset-2'>{de.subHeader}</div>
+                                        <div>{de.mainFirst}</div>
+                                        {i === 0 ?
+                                            <ul className='list-disc'>
+                                                <li>{de.mainSecond}</li>
+                                                <li>{de.mainThird}</li>
+                                                <li>{de.mainFourth}</li>
+                                                <li>{de.mainFivth}</li>
+                                                <li>{de.mainSix}</li>
+                                                <li>{de.mainSeven}</li>
+                                            </ul>
+                                            
+                                        :
+                                            <div>
+                                                {/* <div>{de.mainFirst}</div>    */}
+                                                <div>{de.mainSecond}</div>
+                                                <div>{de.mainThird}</div>
+                                                <div>{de.mainFourth}</div>
+                                                <div>{de.mainFivth}</div>
+                                                <div>{de.mainSix}</div>
+                                                <div>{de.mainSeven}</div>
+                                            </div>
+                                        }      
+                                    </>
+                                    
+                                )
+                            })}
+                        </div>
+                        {/* { i=== 1 ? <iframe className='w-full md:w-1/2 aspect-video' src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=1"></iframe> 
                         : <div className='w-[80%] h-[90%] border p-5 flex flex-col'>
                             <div>{ e.description[0] }</div>
                             <div>{ e.description[1] }</div>
@@ -150,7 +185,7 @@ export default function Screens() {
                                     <div className='group-checked:block hidden'>Hello</div>
                                 </div>
                             </div>}
-                        </div> }
+                        </div> } */}
                     </div>
                   </div>
                   <div className='row-start-2 md:col-start-1 font-bold text-3xl lg:text-6xl p-5 overflow-clip border-l-2 border-t-2 border-mike-backgroundDark/10 dark:border-mike-bgLight/10'>{ e.header }</div>
