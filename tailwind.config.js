@@ -184,25 +184,6 @@ module.exports = {
           '0%, 100%': { color: '#778DA9' },
           '50': { color: '#0D1B2A' },
         },
-        bounce: {
-          '0%' :{
-            transform: 'none', 
-            height: '50px', width: '70px',
-            height: '0px', width:'0px', borderLeft: '30px solid transparent', borderRight: '30px solid transparent', borderBottom: '30px solid black', 
-            animationTimingFunction: 'cubic-bezier(0.8,0,1,1)'
-            
-          },
-          '50%': {
-              transform: 'translateY(-50%)',
-              height: '0px', width:'0px', borderLeft: '30px solid transparent', borderRight: '30px solid transparent', borderBottom: '30px solid black', 
-              animationTimingFunction: 'cubic-bezier(0,0,0.2,1)'
-          },
-          '100%': {
-            transform: 'none',
-            height: '0px', width:'0px', borderLeft: '30px solid transparent', borderRight: '30px solid transparent', borderBottom: '30px solid black', 
-            animationTimingFunction: 'cubic-bezier(0.8,0,1,1)'
-          }
-        },
         blink: {
           '0%, 100%': { background: 'black'},
           '50%': { background: 'white' },

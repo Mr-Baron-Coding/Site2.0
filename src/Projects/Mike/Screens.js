@@ -22,7 +22,11 @@ export default function Screens() {
             name: 'about', 
             main: 'Helllo', 
             header: 'מיכאל רדבוגין', 
-            description: [' קצת רקע עליי', 'אל תדאגו אסייע לכם לאורך כל הדרך - מאיתור הזדמנויות ועד רכישת הנכס' ],
+            description: [
+                ' קצת רקע על מיכאל רדבוגין', 
+                'נשוי באושר לטלי ומתגוררים בגבעתיים.',
+                'השתחררתי בדרגת סגן מחיל הים היכן ששרתתי בתור מהדנס על כלי שיט שונים'
+            ],
             bg: 'bg-articaleFour bg-bottom' 
         },
         { 
@@ -132,7 +136,7 @@ export default function Screens() {
                         : <div className='w-[80%] h-[90%] border p-5 flex flex-col'>
                             <div>{ e.description[0] }</div>
                             <div>{ e.description[1] }</div>
-                            {e.description[2] && <div className='grid grid-cols-2 grid-rows-[20%,_80%] h-2/3'>
+                            {i === 2 && e.description[2] && <div className='grid grid-cols-2 grid-rows-[20%,_80%] h-2/3'>
                                 <div className='row-start-1 col-start-1 col-span-2'>{ e.description[2] }</div>
                                 <div className='col-span-1 row-start-2 col-start-1 h-1/4 w-1/3 transition-all duration-700 delay-100 ease-in-out group border-b md:hover:border-b md:hover:bg-grey/50 md:hover:w-full overflow-hidden'>
                                     <div>{ e.description[3] }</div>

@@ -7,7 +7,7 @@ export default function Contact() {
     const [name, setName] = useState('');
     const [mail, setMail] = useState('');
     const [message, setMessage] = useState('');
-    const [thanks, setThanks] = useState(false);
+    const [thanks, setThanks] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -17,37 +17,45 @@ export default function Contact() {
             message: message,
             email: mail
         })
-            .then(response => console.log(response))
-            .catch(error => console.log(error));
-            setThanks(true);
+            .then(response => {
+                response && setThanks('Sent successfully!')
+            })
+            .catch(error => {
+                error && setThanks('Something went wrong...')
+            })
         setTimeout(() => {
             setName('');
             setMail('');
             setMessage('');
-            setThanks(false)
-        }, 3000)
+            setThanks('')
+        }, 4000)
     };
 
   return (
     <div id='contact' className={`col-start-2 grid ${ isOpen ? 'row-start-[9] md:row-start-6' : 'row-start-[8] md:row-start-5' } md:grid-cols-[10%,_80%,_10%] text-xl`}>
-        <div className='md:col-start-2 flex flex-col gap-y-4 md:grid md:grid-cols-[60%,_40%]'>
-        <div className='flex justify-start items-center font-extra text-4xl text-clip overflow-clip'>I would like to hear from you.</div>
-            <form id='form' onSubmit={(e) => handleSubmit(e) }>
-                <div className='cols-start-2 flex flex-col gap-4 bg-blueGrey-500/10 rounded-lg p-3 select-text shadow-xl'>
-                    <div className='flex flex-col gap-2'>
-                        <label>Name</label>
-                        <input required aria-required type='text' name='name' value={name} onChange={(e)=> setName(e.target.value)} className='text-black dark:text-blueGrey-100 bg-blueGrey-500/70 h-[60px] outline-none border-none rounded-lg p-3 focus:outline-2 focus:outline-blueGrey-300 focus:bg-blueGrey-700/70' />
+        <div className='md:col-start-2 flex flex-col justify-center items-center gap-y-4 md:grid md:grid-cols-[50%,_50%] lg:grid-cols-2'>
+            <div className='flex flex-col gap-4 mx-3 h-1/2 text-center font-extra text-2xl md:text-4xl overflow-clip'>
+                Let's Work Together 
+                <span style={{ WebkitTextFillColor: 'transparent', whiteSpace:'nowrap' }} className='md:text-2xl lg:text-4xl bg-[-200%] bg-[length:200%] bg-gradient-to-r bg-clip-text from-blueGrey-500 via-blueGrey-100 to-blueGrey-500 animate-magicText'>Send me a Message</span>
+            </div>
+            <form id='form' className='h-full w-full flex items-center justify-center' onSubmit={(e) => handleSubmit(e) }>
+                <div className='cols-start-2 flex flex-col gap-4 justify-around bg-blueGrey-500/10 rounded-lg p-5 select-text shadow-xl max-w-md min-w-[330px] aspect-[9/14]'>
+                    <div className='relative'>
+                        <input required aria-required type='text' name='name' value={name} onChange={(e)=> setName(e.target.value)} className='peer font-bold dark:font-medium dark:text-blueGrey-100 bg-blueGrey-500/10 h-[40px] w-full outline-none border-b-2 border-blueGrey-300 focus:border-blueGrey-700 px-3 focus:text-blueGrey-900 focus:bg-blueGrey-500/70' />
+                        <label className='absolute h-1/2 top-1.5 left-3 transition-all pointer-events-none peer-valid:-top-4 peer-valid:left-1 peer-valid:text-sm peer-focus:-top-4 peer-focus:left-1 peer-focus:text-sm'>Name*</label>
                     </div>
-                    <div className='flex flex-col gap-2'><label>Email</label>
-                        <input required type="email" name="email" value={mail} onChange={(e)=> setMail(e.target.value)} className='text-black dark:text-blueGrey-100 bg-blueGrey-500/70 h-[60px] outline-none border-none rounded-lg p-3 focus:outline-2 focus:outline-blueGrey-300 focus:bg-blueGrey-700/70' />
+                    <div className='relative'>
+                        <input required aria-required type="email" name="email" value={mail} onChange={(e)=> setMail(e.target.value)} className='peer font-bold dark:font-medium dark:text-blueGrey-100 bg-blueGrey-500/10 h-[40px] w-full outline-none border-b-2 border-blueGrey-300 focus:border-blueGrey-700 px-3 focus:text-blueGrey-900 focus:bg-blueGrey-500/50' />
+                        <label className={` ${mail.length === 0 ? 'top-1.5 left-3' : '-top-4 left-1 text-sm'} absolute h-1/2 transition-all pointer-events-none peer-focus:-top-4 peer-focus:left-1 peer-focus:text-sm`}>Email*</label>
                     </div>
                     <input type="hidden" name="_subject" value='New submission!' />
                     <input type="hidden" name="_captcha" value="false" />
-                    <div className='flex flex-col gap-2'><label>Message</label>
-                        <textarea required type='text' name='message' value={message} placeholder='Say Something' onChange={(e)=> setMessage(e.target.value)} className='font-black text-black dark:text-blueGrey-100 bg-blueGrey-500/70 h-[250px] outline-none border-none rounded-lg p-3 focus:outline-2 focus:outline-blueGrey-300 resize-none focus:bg-blueGrey-700/70'></textarea>
+                    <div className='relative'>
+                        <textarea required type='text' name='message' value={message} onChange={(e)=> setMessage(e.target.value)} className='peer resize-none font-bold dark:font-medium rounded-md dark:text-blueGrey-100 bg-blueGrey-500/10 h-full w-full outline-none border-2 border-blueGrey-300 focus:border-blueGrey-300/50 p-3 focus:text-blueGrey-900 focus:bg-blueGrey-500/50'></textarea>
+                        <label className={` ${message.length === 0 ? 'top-1.5 left-3' : '-top-4 left-1 text-sm'} absolute h-1/2 transition-all pointer-events-none peer-focus:-top-4 peer-focus:left-1 peer-focus:text-sm`}>Add Message*</label>
                     </div>
                     <div className='flex justify-between'>
-                        {thanks ? <div>Sent Successfully</div> : <button type='submit' className="bg-blueGrey-100 text-blueGrey-900 rounded-lg h-[40px] transition-all duration-500 w-[100px] hover:w-[200px] hover:ring-blueGrey-100 hover:ring-2 hover:bg-blueGrey-700/70 hover:text-blueGrey-100">Send</button>
+                        {thanks.length !== 0 ? <div>{thanks}</div> : <button type='submit' className="bg-blueGrey-100 text-blueGrey-900 rounded-lg h-[40px] transition-all duration-500 w-[100px] hover:w-[200px] hover:ring-blueGrey-100 hover:ring-2 hover:bg-blueGrey-700/70 hover:text-blueGrey-100">Send</button>
 }
                     </div>
                         

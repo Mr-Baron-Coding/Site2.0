@@ -6,7 +6,7 @@ import {
     TbMail,
     TbBrandLinkedin,
     TbBrandGithub,
-    TbArrowDown,
+    TbFileText
   } from "react-icons/tb";
   import { TbCopyright } from "react-icons/tb";
 
@@ -51,10 +51,7 @@ export default function Footer() {
           rel="noreferrer"
           download="MichaelBaron.pdf"
         >
-          <TbArrowDown className='stroke-blueGrey-900 dark:stroke-blueGrey-100 stroke-2' size={28} />
-          {/* <div className="innerContainer">Download Resume<div>
-                </div>
-                </div> */}
+          <TbFileText className='stroke-blueGrey-900 dark:stroke-blueGrey-100 stroke-2' size={28} />
         </a>
       </div>
       </div>
