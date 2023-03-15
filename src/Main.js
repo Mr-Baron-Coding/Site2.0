@@ -61,7 +61,7 @@ function Main() {
       id='main'
       className={` 
         min-h-screen snap-y snap-mandatory overflow-x-hidden
-        bg-blueGrey-100 text-blueGrey-500
+        bg-white text-blueGrey-500
         dark:bg-blueGrey-700 dark:text-blueGrey-100
         grid transition-all duration-[1000ms] ease-in-out
         ${isOpen ? 'grid-rows-baseRowGridMobileOpen md:grid-rows-baseRowGridOpen' : 'grid-rows-baseRowGridMobile md:grid-rows-baseRowGrid'}
@@ -78,7 +78,7 @@ function Main() {
       <Contact />
       <Footer />
 
-      { scrollTop > 20 && <button className='hover:animate-pulse hover:text-blueGrey-300/50 text-blueGrey-300 fixed bottom-[100px] right-5 border-2 h-[50px] w-[70px]' onClick={ () => goToTop() }>Top</button> } 
+      { scrollTop > 20 && <button className='hover:animate-pulse hover:text-blueGrey-900/50 hover:bg-blueGrey-300 text-blueGrey-300 fixed bottom-[100px] right-5 border-2 h-[50px] w-[70px]' onClick={ () => goToTop() }>Top</button> } 
        
 
     </div>

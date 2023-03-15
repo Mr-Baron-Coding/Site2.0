@@ -8,13 +8,14 @@ import {
     TbBrandGithub,
     TbFileText
   } from "react-icons/tb";
+  import { FaWhatsapp } from "react-icons/fa";
   import { TbCopyright } from "react-icons/tb";
 
 export default function Footer() {
     const isOpen = useSelector((state) => state.mobile.menuOpend);
   return (
-    <div className={`bg-blueGrey-500/20 border-t col-start-1 col-span-3 ${ isOpen ? 'row-start-[11] md:row-start-7' : 'row-start-[10] md:row-start-6'} grid grid-cols-4 grid-rows-[70%,_30%] h-full w-full items-center justify-center`}>
-      <div className='col-start-1 col-span-4 lg:col-start-3 lg:col-span-2 grid grid-cols-4'>
+    <div className={`bg-blueGrey-500/20 border-y col-start-1 col-span-3 ${ isOpen ? 'row-start-[11] md:row-start-7' : 'row-start-[10] md:row-start-6'} grid grid-cols-4 grid-rows-[60%,_40%] h-full w-full items-center justify-center`}>
+      <div className='col-start-1 col-span-4 lg:col-start-2 lg:col-span-2 grid grid-cols-5'>
       <div className="w-full h-full flex justify-center items-center">
         <a href="mailto:mikebaroncoding@gmail.com" className="linkHover">
             <TbMail className="stroke-blueGrey-900 dark:stroke-blueGrey-100 stroke-2" size={28} />
@@ -52,6 +53,11 @@ export default function Footer() {
           download="MichaelBaron.pdf"
         >
           <TbFileText className='stroke-blueGrey-900 dark:stroke-blueGrey-100 stroke-2' size={28} />
+        </a>
+      </div>
+      <div className='w-full h-full flex justify-center items-center'>
+        <a aria-label="Chat on WhatsApp" target='_blank' href="https://wa.me/972544443598">
+          <div className='flex justify-center gap-4'><FaWhatsapp size={28} /></div>
         </a>
       </div>
       </div>

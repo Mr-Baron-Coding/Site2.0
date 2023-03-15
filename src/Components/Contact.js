@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useSelector } from "react-redux";
+import useIntersectionObserver from "./useIntersectionObserver";
 import axios from "axios";
 
 export default function Contact() {
+    const ref = useRef();
+    const isIntersecting = useIntersectionObserver(ref, { threshold: 0.1 });
     const isOpen = useSelector((state) => state.mobile.menuOpend);
     const [name, setName] = useState('');
     const [mail, setMail] = useState('');
@@ -32,13 +35,13 @@ export default function Contact() {
     };
 
   return (
-    <div id='contact' className={`col-start-2 grid ${ isOpen ? 'row-start-[9] md:row-start-6' : 'row-start-[8] md:row-start-5' } md:grid-cols-[10%,_80%,_10%] text-xl`}>
-        <div className='md:col-start-2 flex flex-col justify-center items-center gap-y-4 md:grid md:grid-cols-[50%,_50%] lg:grid-cols-2'>
+    <div id='contact' className={`col-start-2 grid ${ isOpen ? 'row-start-[9] md:row-start-6' : 'row-start-[8] md:row-start-5' } md:grid-cols-[10%,_80%,_10%] text-xl`} ref={ref}>
+        <div className='md:col-start-2 flex flex-col justify-center items-center gap-y-4 md:grid md:grid-cols-[50%,_50%] lg:grid-cols-2 overflow-hidden'>
             <div className='flex flex-col gap-4 mx-3 h-1/2 text-center font-extra text-2xl md:text-4xl overflow-clip'>
-                Let's Work Together 
+                <span className={`transition-all duration-700 ease-linear ${isIntersecting ? 'translate-y-0' : '-translate-y-[110%]'}`}>Let's Work Together</span> 
                 <span style={{ WebkitTextFillColor: 'transparent', whiteSpace:'nowrap' }} className='md:text-2xl lg:text-4xl bg-[-200%] bg-[length:200%] bg-gradient-to-r bg-clip-text from-blueGrey-500 via-blueGrey-100 to-blueGrey-500 animate-magicText'>Send me a Message</span>
             </div>
-            <form id='form' className='h-full w-full flex items-center justify-center' onSubmit={(e) => handleSubmit(e) }>
+            <form id='form' className={`h-full w-full flex items-center justify-center transition-all duration-700 ease-linear ${isIntersecting ? 'translate-x-0' : 'translate-x-[110%]'}`} onSubmit={(e) => handleSubmit(e) }>
                 <div className='cols-start-2 flex flex-col gap-4 justify-around bg-blueGrey-500/10 rounded-lg p-5 select-text shadow-xl max-w-md min-w-[330px] aspect-[9/14]'>
                     <div className='relative'>
                         <input required aria-required type='text' name='name' value={name} onChange={(e)=> setName(e.target.value)} className='peer font-bold dark:font-medium dark:text-blueGrey-100 bg-blueGrey-500/10 h-[40px] w-full outline-none border-b-2 border-blueGrey-300 focus:border-blueGrey-700 px-3 focus:text-blueGrey-900 focus:bg-blueGrey-500/70' />
