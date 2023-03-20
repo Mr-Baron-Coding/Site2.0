@@ -59,7 +59,7 @@ export default function Main() {
       <ContactForm isContactOpen={ isContactOpen } close={() => close() } />
       <MobileMenu mobileMenu={mobileMenu} change={ () => langChange() } theme={ (b) => themeChange(b) } contact={ () => closeMenues() } />
       <div className='row-start-1 border-b-2 border-mike-backgroundDark/10 dark:border-mike-bgLight/10 grid grid-rows-none md:grid-cols-[50%,_25%,_25%]'>
-        <div className={`md:col-start-1 text-xl md:text-2xl lg:text-4xl ${ isEnglish ? 'border-r-2' : 'border-l-2'} border-mike-backgroundDark/10 dark:border-mike-bgLight/10 p-5 md:px-8 md:py-10 subpixel-antialiased text-center ${isEnglish ? 'md:text-left' : 'md:text-right'} font-Radbo`}>
+        <div className={`md:col-start-1 text-xl md:text-2xl lg:text-4xl ${ isEnglish ? 'border-r-2' : 'border-l-2'} border-mike-backgroundDark/10 dark:border-mike-bgLight/10 p-5 md:px-8 md:py-10 subpixel-antialiased text-center ${isEnglish ? 'md:text-left font-Radbo' : 'md:text-right font-RadboHeb'}`}>
           { isEnglish ? 'Radvogin - Real Estate & Investing' : 'רדבוגין - נדל"ן ושוק ההון' }
         </div>
         <div className={`hidden md:col-start-2 ${ isEnglish ? 'md:border-r-2' : 'md:border-l-2'} border-b-2 md:border-b-0 border-mike-backgroundDark/10 dark:border-mike-bgLight/10 md:flex justify-evenly items-center text-lg md:text-2xl`}>

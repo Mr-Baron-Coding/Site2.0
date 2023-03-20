@@ -57,8 +57,8 @@ export default function Contact() {
                         <textarea required type='text' name='message' value={message} onChange={(e)=> setMessage(e.target.value)} className='peer resize-none font-bold dark:font-medium rounded-md dark:text-blueGrey-100 bg-blueGrey-500/10 h-full w-full outline-none border-2 border-blueGrey-300 focus:border-blueGrey-300/50 p-3 focus:text-blueGrey-900 focus:bg-blueGrey-500/50'></textarea>
                         <label className={` ${message.length === 0 ? 'top-1.5 left-3' : '-top-4 left-1 text-sm'} absolute h-1/2 transition-all pointer-events-none peer-focus:-top-4 peer-focus:left-1 peer-focus:text-sm`}>Add Message*</label>
                     </div>
-                    <div className='flex justify-between'>
-                        {thanks.length !== 0 ? <div>{thanks}</div> : <button type='submit' className="bg-blueGrey-100 text-blueGrey-900 rounded-lg h-[40px] transition-all duration-500 w-[100px] hover:w-[200px] hover:ring-blueGrey-100 hover:ring-2 hover:bg-blueGrey-700/70 hover:text-blueGrey-100">Send</button>
+                    <div className='flex justify-center items-center'>
+                        {thanks.length !== 0 ? <div>{thanks}</div> : <button type='submit' className="bg-blueGrey-100 text-blueGrey-900 ring-2 ring-blueGrey-300/80 transition-all duration-500 ease-linear ring-offset-2 rounded-lg h-[40px] w-[100px] md:hover:w-[200px] md:hover:ring-blueGrey-300 md:hover:ring-2 md:hover:bg-blueGrey-700/70 md:hover:text-blueGrey-100">Send</button>
 }
                     </div>
                         

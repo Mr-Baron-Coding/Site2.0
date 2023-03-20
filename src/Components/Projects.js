@@ -18,6 +18,7 @@ export default function Projects() {
     // { screen: 'Here', name: 'Suduko', show: false, visit: 'Github', style: 'h-SudHieght w-SudWidth' },
     { screen: <XO />, name: 'XO', show: false, visit: 'https://github.com/Mr-Baron-Coding/XO', style: 'h-XOHeight w-XOWidth' },
     { screen: <Calc />, name: 'Calculator', show: false, visit: 'https://github.com/Mr-Baron-Coding/Calculator', style: 'h-calcHeight w-calcWidth' },
+    { screen: 'Pic', name: 'My Site', show: false, visit: 'https://github.com/Mr-Baron-Coding/Site2.0', style: '' },
   ]);
   const [window, setWindow] = useState(false);
   const isIntersecting = useIntersectionObserver(ref, { threshold: 0.8 });
@@ -48,10 +49,11 @@ export default function Projects() {
             <div 
               key={i} 
               className={
-                          `border-blueGrey-300 md:m-0 border-2 h-full w-3/4 md:scale-[0.7] xl:scale-90 md:absolute md:mdCard transition-all duration-500 ease-linear md:hover:bg-blueGrey-500/50  md:hover:shadow-inner md:hover:shadow-blueGrey-300 md:hover:text-blueGrey-900 md:hover:z-50  md:hover:dark:bg-blueGrey-500/90 md:hover:dark:text-blueGrey-100
+                          `border-blueGrey-300 m-3 md:m-0 border-2 h-5/6 w-3/4 md:scale-[0.7] xl:scale-90 md:absolute md:mdCard transition-all duration-500 ease-linear md:hover:bg-blueGrey-500/50  md:hover:shadow-inner md:hover:shadow-blueGrey-300 md:hover:text-blueGrey-900 md:hover:z-50  md:hover:dark:bg-blueGrey-500/90 md:hover:dark:text-blueGrey-100
                             ${ !window ? i === 0 && (isIntersecting ? 'md:origin-bottom-left md:-translate-x-[80px] md:-rotate-12 z-10 bg-blueGrey-300/60' : 'md:origin-bottom-left md:translate-y-0')  : i === 0 && 'md:bg-blueGrey-500/50 md:-translate-x-[100px] xl:-translate-x-[145px]' } 
                             ${ !window ? i === 1 && (isIntersecting ? 'md:origin-bottom md:rotate-0 md:text-center md:z-30 bg-blueGrey-300/80' : 'md:origin-bottom') : i === 1 && 'md:bg-blueGrey-300/50 group-hover:-translate-y-10' } 
                             ${ !window ? i === 2 && (isIntersecting ? 'md:origin-bottom-right md:translate-x-[80px] md:rotate-12 md:text-end z-10 bg-blueGrey-300/60' : 'md:origin-bottom-right md:translate-y-0') : i === 2 && 'md:bg-blueGrey-300/50 md:translate-x-[100px] xl:translate-x-[145px]' } 
+                            ${ !window ? i === 3 && (isIntersecting ? 'md:origin-bottom md:rotate-0 md:translate-x-[240px] md:text-center md:z-30 bg-blueGrey-300/80' : 'md:origin-bottom') : i === 3 && 'md:bg-blueGrey-300/50 group-hover:-translate-y-10 md:translate-x-[200px] xl:translate-x-[290px]' } 
                             rounded-lg transition ease-in-out duration-500 rotate-0 bg-none grid grid-cols-2 md:grid-cols-1 md:grid-rows-2 
                             ${ e.show && 'transition ease-linear duration-500 rotate-6 bg-blueGrey-700 md:bg-blueGrey-700 border-blueGrey-100' }
                           `} 
@@ -74,7 +76,7 @@ export default function Projects() {
         { screens.map((e,i) => {
           return (
             e.show ? 
-            <div key={i+3} className={`h-full max-w-md w-full flex justify-center md:h-proHeight md:w-proWidth shadow-xl dark:animate-projectAnimation rounded-xl`}>
+            <div key={i+3} className={`${i !== 3 && 'h-full max-w-md w-full flex justify-center md:h-proHeight md:w-proWidth shadow-xl dark:animate-projectAnimation rounded-xl'}`}>
               {i===3 ? <Link to='/future' onClick={ () => handleClick(i) }>{e.screen}</Link> : e.screen}
             </div> 
             : null

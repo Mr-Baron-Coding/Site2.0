@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
@@ -7,6 +7,7 @@ import { loremIpsum } from 'react-lorem-ipsum';
 import asd from './Data/HebData';
 
 export default function Screens() {
+    const ref = useRef();
     const isEnglish = useSelector((state) => state.style.isEnglish);
     const isDark = useSelector((state) => state.style.isDark);
 
@@ -105,8 +106,12 @@ export default function Screens() {
         });
       };
 
+      const openQues = (index) => {
+        
+      };
+
   return (
-    <div className='row-start-2 relative overflow-hidden' id='screen-container'>
+    <div className='row-start-2 relative overflow-hidden select-text' id='screen-container'>
         { isEnglish ? 
             dataEng.map((e,i) => {
                 return (
@@ -134,38 +139,105 @@ export default function Screens() {
             return (
                 <div key={i} className='h-full w-full grid grid-rows-[70%,_10%,_20%] md:grid-rows-[75%,_25%] md:grid-cols-[75%,_25%] absolute left-0 top-0 data-[status=moving-right]:transition-none data-[status=moving-right]:translate-x-full data-[status=moving-left]:transition-none data-[status=moving-left]:-translate-x-full transition-all duration-1000 ease-in-out data-[status=before]:translate-x-[110%] data-[status=after]:-translate-x-[110%]' data-index={i} data-status={i === 0 ? 'active' : 'before'}>
                   <div className={`row-start-1 md:col-span-2 ${e.bg} grid place-items-center bg-blend-soft-light bg-cover bg-no-repeat bg-center text-center border-l-2 border-mike-backgroundDark/10 dark:border-mike-bgLight/10 left-0 top-0 dark:text-mike-fontLight text-mike-fontDark`}>
-                    <div className='h-full w-full bg-mike-bgLight/70 dark:bg-mike-backgroundDark/50 text-xl md:text-3xl font-bold font-body flex justify-center items-center overflow-y-auto md:overflow-none scroll-smooth'>
-                        <div className='p-3 h-full w-full inline-block'>
-                            {e.description.map((de,poss) => {
-                                return (
-                                    <>
-                                        <div className='text-2xl underline underline-offset-2'>{de.subHeader}</div>
-                                        <div>{de.mainFirst}</div>
-                                        {i === 0 ?
-                                            <ul className='list-disc'>
-                                                <li>{de.mainSecond}</li>
-                                                <li>{de.mainThird}</li>
-                                                <li>{de.mainFourth}</li>
-                                                <li>{de.mainFivth}</li>
-                                                <li>{de.mainSix}</li>
-                                                <li>{de.mainSeven}</li>
-                                            </ul>
-                                            
-                                        :
-                                            <div>
-                                                {/* <div>{de.mainFirst}</div>    */}
-                                                <div>{de.mainSecond}</div>
-                                                <div>{de.mainThird}</div>
-                                                <div>{de.mainFourth}</div>
-                                                <div>{de.mainFivth}</div>
-                                                <div>{de.mainSix}</div>
-                                                <div>{de.mainSeven}</div>
-                                            </div>
-                                        }      
-                                    </>
-                                    
-                                )
-                            })}
+                    <div className='h-full w-full border-2 bg-mike-bgLight/70 dark:bg-mike-backgroundDark/50 flex justify-center items-center overflow-y-auto md:overflow-none scroll-smooth p-5'>
+                        <div className='h-full w-full '>
+                            { i === 0 && 
+                                <div className='flex flex-col justify-center items-center gap-y-3'>
+                                    <div className='underline underline-offset-1 text-xl md:text-3xl'>{e.subHeader}</div>
+                                    <ul className='list-disc list-outside text-right text-md md:text-xl md:w-1/2'>
+                                        {e.description.map((element, index) => {
+                                            return (
+                                                index <= 1 ? <div>{element.mainText}</div> : <li>{element.mainText}</li>
+                                                
+                                            )
+                                        })}
+                                    </ul>
+                                </div>
+                            }
+                            { i === 1 && 
+                                <div className='flex flex-col justify-center items-center gap-y-10'>
+                                    <div className='underline underline-offset-1 text-xl md:text-3xl'>{e.subHeader}</div>
+                                    <div className='felx flex-col w-full justify-center items-center md:w-3/4 border-y-2'>
+                                        {e.description.map((element) => {
+                                                return (
+                                                    <div className='text-md md:text-xl'>
+                                                        { element.mainText }  
+                                                    </div>
+                                                )
+                                        })}
+                                    </div>
+                                    <div className='flex flex-col md:flex-row gap-y-5 border-y w-full'>
+                                        <div className='md:w-1/2 text-right px-5'>
+                                            {e.pitch.map((element, index) => { return (<div className='text-md md:text-xl font-bold underline'>{ index===0 && element.mainText }</div>) })}
+                                            {e.pitch.map((element, index) => {
+                                                return (
+                                                    index > 0 &&
+                                                        <ul className='list-disc text-sm md:text-lg list-inside'>
+                                                            <li className='no-underline'>{element.mainText}</li>
+                                                        </ul>
+                                                    
+                                                )
+                                            })}
+                                        </div>
+                                        <div className='md:w-1/2 text-right px-5'>
+                                            {e.sale.map((element, index) => { return (<div className='text-md md:text-xl font-bold underline'>{ index===0 && element.mainText }</div>) })}
+                                            {e.sale.map((element, index) => {
+                                                return (
+                                                    index > 0 &&
+                                                        <ul className='list-disc text-sm md:text-lg list-outside'>
+                                                            <li className='no-underline'>{element.mainText}</li>
+                                                        </ul>
+                                                )
+                                            })}
+                                        </div>
+                                    </div>
+                                    <div className='lg:w-1/2 space-y-5'>
+                                        {e.possible.map((element, index) => { return (<div className='text-md md:text-xl font-bold underline'>{ index===0 && element.mainText }</div>) })}
+                                        <div className='flex flex-col gap-y-3 text-right'>
+                                            {e.possible.map((element, index) => {
+                                                return (
+                                                    index > 0 &&
+                                                        <ul className='text-sm md:text-lg md:list-outside'>
+                                                            <li className='no-underline relative'>
+                                                                <span className='right-0 absolute'>₪</span>
+                                                                <span className='pr-5'>{element.mainText}</span>
+                                                            </li>
+                                                        </ul>
+                                                )
+                                            })}
+                                        </div>
+                                    </div>
+                                    <div className='border-y-2 md:text-xl lg:text-3xl pb-5'>{e.motivation}</div>
+                                    <div className='lg:w-1/2 space-y-5'>
+                                        {e.questions.map((element, index) => { return (<div className='text-md md:text-xl font-bold underline'>{ index===0 && element.mainText }</div>) })}
+                                        <div className='flex flex-col gap-y-3 text-right w-full'>
+                                            {e.questions.map((element, index) => {
+                                                return (
+                                                    index > 0 &&
+                                                        <div onClick={ () => openQues(index) } className='relative w-full h-max overflow-hidden p-3 group border' ref={ref}>
+                                                            <input type='checkbox' className='peer appearance-none absolute w-full h-full top-0 right-0' />  
+                                                            <div className='pointer-events-none md:text-xl bg-mike-bgLight/50 dark:bg-mike-backgroundDark/50'>{element.mainText}</div>
+                                                            <div className='transition-all duration-300 ease-linear -translate-x-[110%] h-0 peer-checked:h-full peer-checked:translate-x-0'>{element.body}</div>
+                                                        </div>
+                                                )
+                                            })}
+                                        </div>
+                                    </div>
+                                    <div className='h-5'></div>
+                                </div>
+                            }
+                            { i === 2 && 
+                                <div className='flex flex-col justify-center items-center gap-y-10'>
+                                    <div className='underline underline-offset-1 text-xl md:text-3xl'>{e.subHeader}</div>
+                                    <div className='flex justify-center items-center'>
+                                        {e.description.map((element, index) => {
+                                            return (
+                                                element.mainText
+                                            )
+                                        })}
+                                    </div>
+                                </div>
+                            }
                         </div>
                         {/* { i=== 1 ? <iframe className='w-full md:w-1/2 aspect-video' src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=1"></iframe> 
                         : <div className='w-[80%] h-[90%] border p-5 flex flex-col'>

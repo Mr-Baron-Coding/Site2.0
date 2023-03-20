@@ -22,17 +22,18 @@ export default function MobileMenu({mobileMenu, change, theme, contact}) {
             <div className='text-center' onClick={ contact }>{isEnglish? 'Leave a message' : 'השאירו פרטים'}</div>
             <a aria-label="Chat on WhatsApp" target='_blank' href="https://wa.me/972529258063"><div className='flex justify-center gap-4'>{isEnglish? 'WhatsApp Me' : 'דברו איתי ישירות'}<FaWhatsapp /></div></a>
             <a href='https://www.facebook.com/michael.radvogin' target='_blank' ><div className='text-center'>{isEnglish? 'Follow me for latest news' : ' עקבו אחריי ברשתות החברתיות'}</div></a>
-            <div className='text-center absolute bottom-0 m-auto' onClick={ () => setSettings(true) }>{ isEnglish ? 'Settings' : 'הגדרות'}</div>
-        </div>
-        <div className={`flex flex-col w-full h-full font-bold z-10 pt-10 absolute bg-mike-bgLight/95 dark:bg-mike-backgroundDark/90 transition-all ease-linear duration-500 ${settings ? 'translate-x-0' : '-translate-x-[101%]'}`}>
-                <div className='h-1/6 px-2 flex justify-center items-center' >{ isEnglish ? <img src={ Heb } alt='heb' className='h-5' onClick={ change }/> : <img src={ Eng } className='h-5' alt='heb' onClick={ change } /> }</div>
-                <div className='h-1/6 px-2 flex justify-center items-center'>          
+            {/* <div className='text-center absolute bottom-0 m-auto' onClick={ () => setSettings(true) }>{ isEnglish ? 'Settings' : 'הגדרות'}</div> */}
+            <div className={`flex justify-center items-center w-full font-bold border`}>
+                <div className='flex justify-center items-center' >{ isEnglish ? <img src={ Heb } alt='heb' className='h-5' onClick={ change }/> : <img src={ Eng } className='h-5' alt='heb' onClick={ change } /> }</div>
+                <div className='flex justify-center items-center'>          
                     <span className='hover:cursor-pointer' onClick={ isDark ? () => theme(false) : () => theme(true) }>
                         { !isDark ? <LightMode /> : <DarkMode /> }
                     </span>
                 </div>
-                <div className='h-1/6 px-2 flex justify-center items-center' onClick={ () => setSettings(false) }>{`${isEnglish ? 'Back' : 'חזרה'}`}</div>
+                <div className='flex justify-center items-center' onClick={ () => setSettings(false) }>{`${isEnglish ? 'Back' : 'חזרה'}`}</div>
             </div>
+        </div>
+
     </div>
   )
 };
