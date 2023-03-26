@@ -48,7 +48,7 @@ export default function Footer() {
       </div>
       <div className="w-full h-full flex justify-center items-center">
         <a
-          href="https://docs.google.com/document/d/e/2PACX-1vT6qCn8Xpk-13DsbY01a39T5qPRZbEfJx8i9ZYWJFem4Dsa87543X2G0_qC_x6liY6DRofkavcaRNwF/pub"
+          href="https://docs.google.com/document/d/e/2PACX-1vSu_qztI9R-V7IN1GQjPNCchw5LHY4GElm0CwiYw8huROeQsv7EDIf5k3IBT-Qyd4H2nAy61ge-LWFt/pub"
           rel="noreferrer"
           download="MichaelBaron.pdf"
         >
