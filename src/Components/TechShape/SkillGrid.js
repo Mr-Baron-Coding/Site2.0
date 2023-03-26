@@ -3,7 +3,7 @@ import useIntersectionObserver from '../useIntersectionObserver';
 import { GrReactjs } from 'react-icons/gr';
 import { DiCss3, DiMongodb } from 'react-icons/di';
 import { TbBrandReactNative } from 'react-icons/tb';
-import { FaHtml5, FaNodeJs, FaAws } from 'react-icons/fa';
+import { FaHtml5, FaNodeJs, FaAws, FaAngular } from 'react-icons/fa';
 import { SiJavascript, SiTailwindcss, SiPython, SiMysql, SiPostgresql, SiFlutter } from 'react-icons/si';
 // SiGraphql
 export default function HaxagonGrid({isIntersecting}) {
@@ -18,11 +18,11 @@ export default function HaxagonGrid({isIntersecting}) {
         { name: 'Python', start: 2, icon: <SiPython size={26} /> },
         { name: 'ReactJS', start: 3, icon: <GrReactjs size={26} /> },
         { name: 'React Native', start: 1, icon: <TbBrandReactNative size={26} /> },
-        { name: 'NodeJS', start: 3, icon: <FaNodeJs size={26} /> },
+        { name: 'Angular', start: 3, icon: <FaAngular size={26} /> },
         { name: 'Express', start: 5, icon: 'express' },
         { name: 'AWS', start: 2, icon: <FaAws size={26} /> },
         { name: 'TailwindCSS', start: 4, icon: <SiTailwindcss size={26} /> },
-        { name: 'Flutter', start: 4, icon: <SiFlutter size={26} /> },
+        { name: 'NodeJS', start: 4, icon: <FaNodeJs size={26} /> },
         { name: 'MongoDB', start: 1, icon: <DiMongodb size={26} /> },
         { name: 'MySQL', start: 2, icon: <SiMysql size={26} /> },
         { name: 'PostgreSQL', start: 1, icon: <SiPostgresql size={26} /> },

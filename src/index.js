@@ -18,10 +18,11 @@ import SubSites from './SubSites';
 import Main from './Main';
 import dataSlice from './FamTree/Features/dataSlice';
 import Error from './Pages/Error';
-import ThreeTesting from './Pages/ThreeTesting';
-import SkillsSphere from './Three/SkillsSphere';
-import Mike from './Projects/Mike/Landing';
+// import ThreeTesting from './Pages/ThreeTesting';
+// import SkillsSphere from './Three/SkillsSphere';
+// import Mike from './Projects/Mike/Landing';
 import Thanks from './Components/Thanks';
+// import Privacy from './Privacy/Privacy.html';
 
 const store = configureStore({
   reducer: {
@@ -42,11 +43,12 @@ const router = createBrowserRouter(
     <Route path='/' element={ <App /> } errorElement={ <Error />}>
       <Route path='/' element={ <Main /> } />
       <Route path='future' element={ <SubSites /> } />
-      <Route path='three' element={ <ThreeTesting /> } />
-      <Route path='sphere' element={ <SkillsSphere /> } />
+      {/* <Route path='three' element={ <ThreeTesting /> } />
+      <Route path='sphere' element={ <SkillsSphere /> } /> */}
       <Route path='thanks' element={ <Thanks /> } />
+      {/* <Route path='privacyNotice' element={ <Privacy /> } /> */}
       {/* <Route path='landingpage' element={ <Mike /> } /> */}
-      <Route path='landing' element={ <Mike /> } />
+      {/* <Route path='landing' element={ <Mike /> } /> */}
     </Route>
   )
 );

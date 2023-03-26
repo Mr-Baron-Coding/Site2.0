@@ -78,7 +78,7 @@ function Main() {
       <Contact />
       <Footer />
 
-      { scrollTop > 20 && <button className='hover:animate-pulse hover:text-blueGrey-900/50 hover:bg-blueGrey-300 text-blueGrey-300 fixed bottom-[100px] right-5 border-2 h-[50px] w-[70px]' onClick={ () => goToTop() }>Top</button> } 
+      { scrollTop > 20 && <button className='hover:animate-pulse hover:text-blueGrey-900/50 hover:bg-blueGrey-300 text-blueGrey-300 fixed bottom-[140px] md:bottom-[100px] right-5 border-2 h-[50px] w-[70px]' onClick={ () => goToTop() }>Top</button> } 
        
 
     </div>

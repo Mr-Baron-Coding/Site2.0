@@ -84,8 +84,8 @@ module.exports = {
         sudCols: 'repeat(9, 1fr)'
       },
       gridTemplateRows: {
-        baseRowGrid:          'minmax(70px, 10vh) minmax(780px, 100vh) minmax(300px, 40vh) 250px minmax(600px, 70vh) minmax(100px, 10vh) 10px',
-        baseRowGridOpen:      'minmax(70px, 10vh) minmax(780px, 100vh) minmax(300px, 40vh) 250px minmax(700px, 90vh) minmax(600px, 70vh) minmax(100px, 10vh) 10px',
+        baseRowGrid:          'minmax(70px, 10vh) minmax(780px, 90vh) minmax(300px, 40vh) 250px minmax(600px, 70vh) minmax(100px, 10vh) 10px',
+        baseRowGridOpen:      'minmax(70px, 10vh) minmax(780px, 90vh) minmax(300px, 40vh) 250px minmax(700px, 90vh) minmax(600px, 70vh) minmax(100px, 10vh) 10px',
         //
         baseRowGridMobile:      '3vh minmax(850px, 110vh) 40px minmax(500px, 50vh) 40px 200px 40px minmax(670px, 70vh) 40px minmax(90px, 10vh) 5px',
         baseRowGridMobileOpen:  '3vh minmax(700px, 110vh) 40px minmax(500px, 50vh) 40px 200px minmax(550px, 75vh) 40px minmax(670px, 70vh) 40px minmax(120px, 10vh) 5px',

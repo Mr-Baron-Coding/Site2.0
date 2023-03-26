@@ -19,54 +19,6 @@ export default function Screens() {
         { name: 'market', main: 'Helllo', header: 'All things Investing', description: 'I will teach you everything you need to know about about the market', bg: 'bg-articaleTwo' },
         { name: 'crypto', main: 'Helllo', header: 'All things Crypto', description: 'Crypto market made easy/explained', bg: 'bg-articaleThree' },
     ];
-      const dataHeb = [
-        { 
-            name: 'about', 
-            main: 'Helllo', 
-            header: 'מיכאל רדבוגין', 
-            description: [
-                ' קצת רקע על מיכאל רדבוגין', 
-                'נשוי באושר לטלי ומתגוררים בגבעתיים.',
-                'השתחררתי בדרגת סגן מחיל הים היכן ששרתתי בתור מהדנס על כלי שיט שונים'
-            ],
-            bg: 'bg-articaleFour bg-bottom' 
-        },
-        // { 
-        //     name: 'video', 
-        //     main: 'Helllo', 
-        //     header: 'Latest video', 
-        //     description: [' בואו ללמוד משהו חדש', 'אל תדאגו אסייע לכם לאורך כל הדרך - מאיתור הזדמנויות ועד רכישת הנכס'] ,
-        //     bg: 'bg-none' 
-        // },
-        { 
-            name: 'נדל"ן', 
-            main: 'Helllo', 
-            header: 'נדל"ן', 
-            description: 
-                [
-                    ' כולם מדברים נדל"ן אבל אתם חוששים? ',  
-                    'אל תדאגו אסייע לכם לאורך כל הדרך - מאיתור הזדמנויות ועד רכישת הנכס' , 
-                    'אז על מה אנחנו מדברים?', 
-                    'נדל"ן להשקעה', 
-                    'נדל"ן למגורים'
-                ], 
-            bg: 'bg-articaleOne' 
-        },
-        // { 
-        //     name: 'שוק ההון', 
-        //     main: 'Helllo', 
-        //     header: 'שוק ההון', 
-        //     description: [ ' בואו ללמוד כל מה שצריך בכדי להתחיל להשקיע בשוק ההון ',  'אל תדאגו אסייע לכם לאורך כל הדרך - מאיתור הזדמנויות ועד רכישת הנכס' ], 
-        //     bg: 'bg-articaleTwo' 
-        // },
-        // { 
-        //     name: 'קריפטו', 
-        //     main: 'Helllo', 
-        //     header: 'שוק הקריפטו', 
-        //     description: [ ' בוא ללמוד כל מה שצריך על שוק הקריפטו', 'אל תדאגו אסייע לכם לאורך כל הדרך - מאיתור הזדמנויות ועד רכישת הנכס' ], 
-        //     bg: 'bg-articaleThree' 
-        // },
-    ];
     const [activeIndex, setActive] = useState(0);
 
     useEffect(() => {
