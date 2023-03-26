@@ -59,8 +59,9 @@ function Main() {
   return (
     <div 
       id='main'
+      // portrait:rotate-0 landscape:-rotate-90 landscape:origin-top-left landscape:h-[100vw] landscape:w-[100vh] a  landscape:absolute  landscape:top-full landscape:left-0
       className={` 
-        min-h-screen snap-y snap-mandatory overflow-x-hidden landscape:-rotate-90 landscape:origin-top-left landscape:h-[100vw] landscape:w-[100vh]  landscape:absolute  landscape:top-full landscape:left-0
+        min-h-screen snap-y snap-mandatory overflow-x-hidden 
         bg-white text-blueGrey-500
         dark:bg-blueGrey-700 dark:text-blueGrey-100
         grid transition-all duration-[1000ms] ease-in-out
