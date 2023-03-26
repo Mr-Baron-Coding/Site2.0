@@ -49,14 +49,14 @@ export default function Footer() {
       <div className="w-full h-full flex justify-center items-center">
         <a
           href="https://docs.google.com/document/d/e/2PACX-1vSu_qztI9R-V7IN1GQjPNCchw5LHY4GElm0CwiYw8huROeQsv7EDIf5k3IBT-Qyd4H2nAy61ge-LWFt/pub"
-          rel="noreferrer"
+          rel="noreferrer" target="_blank"
           download="MichaelBaron.pdf"
         >
           <TbFileText className='stroke-blueGrey-900 dark:stroke-blueGrey-100 stroke-2' size={28} />
         </a>
       </div>
       <div className='w-full h-full flex justify-center items-center'>
-        <a aria-label="Chat on WhatsApp" target='_blank' href="https://wa.me/972544443598">
+        <a aria-label="Chat on WhatsApp" target='_blank' rel="noreferrer" href="https://wa.me/972544443598">
           <div className='flex justify-center gap-4'><FaWhatsapp size={28} /></div>
         </a>
       </div>
