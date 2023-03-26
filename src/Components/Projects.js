@@ -16,7 +16,7 @@ export default function Projects() {
     { screen: <Su />, name: 'Suduko', show: false, visit: 'https://github.com/Mr-Baron-Coding/Sudoko', style: 'h-SudHieght w-SudWidth' },
     { screen: <XO />, name: 'XO', show: false, visit: 'https://github.com/Mr-Baron-Coding/XO', style: 'h-XOHeight w-XOWidth' },
     { screen: <Calc />, name: 'Calculator', show: false, visit: 'https://github.com/Mr-Baron-Coding/Calculator', style: 'h-calcHeight w-calcWidth' },
-    { screen: 'My Website', tech: 'Created using React, Redux and TailwindCSS', host: 'Domain and hosting with AWS', link: 'Check it on GitHub', screenTwo: 'Michael Radvogin', techTwo: 'Created using Typescript, React and TailWindCSS', hostTwo: 'Hosted using Firebase', visitTwo: 'https://github.com/Mr-Baron-Coding/Radvogin', name: 'My Sites', show: false, visit: 'https://github.com/Mr-Baron-Coding/Site2.0', style: '' },
+    { screen: 'My Website', tech: 'Created using React, Redux and TailwindCSS', host: 'Domain and hosting with AWS', link: 'Check it on GitHub', screenTwo: 'Michael Radvogin', techTwo: 'Created using Typescript, React and TailWindCSS', hostTwo: 'Hosted using Firebase', visitTwo: 'https://github.com/Mr-Baron-Coding/Radvogin', site: 'https://radvogin-75f22.firebaseapp.com/', name: 'My Sites', show: false, visit: 'https://github.com/Mr-Baron-Coding/Site2.0', style: '' },
   ]);
   const [window, setWindow] = useState(false);
   const isIntersecting = useIntersectionObserver(ref, { threshold: 0.8 });
@@ -104,6 +104,10 @@ export default function Projects() {
                     <a href={`${e.visitTwo}`} rel="noreferrer" target="_blank">
                       <TbBrandGithub className='hover:fill-blueGrey-300 hover:stroke-2 hover:stroke-blueGrey-500 animate-bounce' size={ 28 } />
                     </a>
+                  </div>
+                  <span className='mt-5'>Or Visit the site</span>
+                  <div className='flex justify-center mt-5 animate-bounce'>
+                    <a href={e.site} rel="noreferrer" target="_blank">WWW</a>
                   </div>
 
                 </div>
