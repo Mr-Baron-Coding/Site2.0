@@ -11,7 +11,7 @@ export default function ProgressBar({prog}) {
     }, [prog,isOpen])
     
   return (
-    <div className='fixed w-full h-2 bottom-0 bg-grey'>
+    <div className='fixed w-full h-2 bottom-0 landscape:left-0 bg-grey'>
         <div className='h-full bg-blueGrey-900 w-5' id='myBar'></div>
     </div>
   )

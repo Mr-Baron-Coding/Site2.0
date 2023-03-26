@@ -60,7 +60,7 @@ function Main() {
     <div 
       id='main'
       className={` 
-        min-h-screen snap-y snap-mandatory overflow-x-hidden
+        min-h-screen snap-y snap-mandatory overflow-x-hidden landscape:-rotate-90 landscape:origin-top-left landscape:h-[100vw] landscape:w-[100vh]  landscape:absolute  landscape:top-full landscape:left-0
         bg-white text-blueGrey-500
         dark:bg-blueGrey-700 dark:text-blueGrey-100
         grid transition-all duration-[1000ms] ease-in-out

@@ -1,14 +1,11 @@
-import React, { useState, useRef, useEffect } from 'react';
-import useIntersectionObserver from '../useIntersectionObserver';
+import React, { useState, useEffect } from 'react';
 import { GrReactjs } from 'react-icons/gr';
 import { DiCss3, DiMongodb } from 'react-icons/di';
 import { TbBrandReactNative } from 'react-icons/tb';
 import { FaHtml5, FaNodeJs, FaAws, FaAngular } from 'react-icons/fa';
-import { SiJavascript, SiTailwindcss, SiPython, SiMysql, SiPostgresql, SiFlutter } from 'react-icons/si';
+import { SiJavascript, SiTailwindcss, SiPython, SiMysql, SiPostgresql } from 'react-icons/si';
 // SiGraphql
 export default function HaxagonGrid({isIntersecting}) {
-    // const ref = useRef();
-    // const isIntersecting = useIntersectionObserver(ref, { threshold: 1 });
 
     const [line, setLine] = useState(0);
     const skillz = [
@@ -21,7 +18,7 @@ export default function HaxagonGrid({isIntersecting}) {
         { name: 'Angular', start: 3, icon: <FaAngular size={26} /> },
         { name: 'Express', start: 5, icon: 'express' },
         { name: 'AWS', start: 2, icon: <FaAws size={26} /> },
-        { name: 'TailwindCSS', start: 4, icon: <SiTailwindcss size={26} /> },
+        { name: 'Tailwind', start: 4, icon: <SiTailwindcss size={26} /> },
         { name: 'NodeJS', start: 4, icon: <FaNodeJs size={26} /> },
         { name: 'MongoDB', start: 1, icon: <DiMongodb size={26} /> },
         { name: 'MySQL', start: 2, icon: <SiMysql size={26} /> },
@@ -85,7 +82,7 @@ export default function HaxagonGrid({isIntersecting}) {
             { skillz.map((e,i) => {
                     return (
                         (i >= 4 && i < 7) &&<div className={`flex w-full justify-center items-center ${isIntersecting ? 'translate-x-0 transition-all duration-500 ease-linear delay-100' : '-translate-y-[200%]'}`} key={i}>
-                                    <div className={`flex justify-center items-center transition-all duration-700 ease-linear border-2 hexMobile bg-blueGrey-300 overflow-y-hidden`}>
+                                    <div className={`flex justify-center items-center transition-all duration-700 ease-linear border-2 hexMobile text-clip bg-blueGrey-300 overflow-y-hidden`}>
                                         <div className={`absolute transition-all duration-700 delay-300 ease-linear ${line === 2 ? '-translate-y-[200%] blur-sm' : 'translate-y-0'}`}>{ e.icon }</div>
                                         <div className={`absolute transition-all duration-700 delay-300 ease-linear ${line === 2 ? 'translate-y-0' : 'translate-y-[200%] blur-sm'}`}>{ e.name }</div>
                                     </div>
